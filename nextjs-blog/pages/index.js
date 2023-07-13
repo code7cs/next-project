@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css';
 import Image from 'next/image'
 import easternSpaJpg from '../public/assets/img/eastern-spa.jpg'
 import logoJpg from '../public/assets/img/spa-logo.jpg'
-import logoSmallJpg from '../public/assets/img/logo-small.jpg'
+import footer__logoSmall from '../public/assets/img/logo-small.jpg'
 import card1 from '../public/assets/img/Swedish2.jpg';
 import card2 from '../public/assets/img/deep.png';
 import card3 from '../public/assets/img/foot-massage.jpg';
@@ -23,30 +23,22 @@ export default function Home() {
           alt="Eastern Spa"
           className={styles.logoJpg}
         />
-        {/* <h1 className={styles.title}>
-          Eastern Spa
-        </h1> */}
 
-        <Image
-          className={styles.mainImage}
-          src={easternSpaJpg}
-          alt="Eastern Spa"
-        />
+        {/* Main Section */}
+        <div className={styles.main__imageWrapper}>
+          <Image
+            className={styles.main__image}
+            src={easternSpaJpg}
+            alt="Eastern Spa"
+          />
+          <div className={styles.main__exploreText}>
+            <p >EXPLORE EASTERN SPA</p>
+          </div>
 
-        <div className={styles.exploreText}>
-          <p >EXPLORE EASTERN SPA</p>
+          <a className={styles.main__scheduleBtn} href="tel:+12012386649">Call To Learn More</a>
         </div>
 
-        <a className={styles.scheduleBtn} href="tel:+12012386649">Call To Learn More</a>
-
-
-
-
-        {/* <a href="https://eastern-spa.com" className={styles.card}>
-          <h3>Swedish & Deep Tissue & Foot Massage & Hot Stone &rarr;</h3>
-        </a> */}
-
-
+        {/* Card Section */}
         <div className={styles.grid}>
           <div className={styles.grid__card}>
             <Image className={styles.grid__card_img} src={card1} />
@@ -68,42 +60,10 @@ export default function Home() {
             <span>Hot Stone</span>
           </div>
         </div>
-
-
-        {/*
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Swedish & Deep Tissue & Foot Massage & Hot Stone &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div> */}
       </main>
 
       <footer className={styles.footer}>
-        <Image className={styles.logoSmallJpg} src={logoSmallJpg} />
+        <Image className={styles.footer__logoSmall} src={footer__logoSmall} />
         <a
           href="https://eastern-spa.com"
           target="_blank"

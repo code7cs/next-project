@@ -15,29 +15,10 @@
   text-decoration: none;
 }
 
-.title a {
-  color: blanchedalmond;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: none;
-}
-
-.title {
-  font-weight: 200;
-  margin: 3rem 0;
-  line-height: 1.15;
-  font-size: 3.6rem;
-  text-align: center;
-}
-
-.description {
-  text-align: center;
-  line-height: 1.5;
-  font-size: 1.5rem;
+.footer__logoSmall {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
 }
 
 .grid {
@@ -57,8 +38,17 @@
   width: 40%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.grid__card:hover {
+  transform: scale(1.02);
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  filter: brightness(130%);
+  cursor: pointer;
 }
 
 .grid__card_img {
@@ -72,48 +62,11 @@
   font-weight: 200;
 }
 
-.card {
-  margin: 1rem;
-  flex-basis: 45%;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-/* .card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-} */
-
-.card h3 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-}
-
-.logoSmallJpg {
-  width: 2rem;
-  height: 2rem;
-  margin-right: 1rem;
-}
-
-.mainImage {
+.main__imageWrapper {
   position: relative;
+}
+
+.main__image {
   max-width: 100vw;
   width: 100vw;
   height: auto;
@@ -121,7 +74,7 @@
   opacity: 0.8;
 }
 
-.mainImage:hover {
+.main__image:hover {
   transform: scale(1.02);
   /* filter: brightness(0.8) contrast(1.2); */
   background-color: rgba(0, 0, 0, 0.5);
@@ -129,7 +82,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.exploreText {
+.main__exploreText {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -137,15 +90,15 @@
   font-size: 6rem;
   font-weight: 100;
   position: absolute;
-  top: 60%;
+  top: 30%;
   /*  Need to Adjust Later */
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.scheduleBtn {
+.main__scheduleBtn {
   position: absolute;
-  top: 90%;
+  top: 60%;
   /*  Need to Adjust Later */
   left: 50%;
   transform: translate(-50%, -50%);
@@ -164,12 +117,12 @@
   border-radius: 4px;
 }
 
-.scheduleBtn {
+.main__scheduleBtn {
   color: white;
   text-decoration: none;
 }
 
-.scheduleBtn:hover {
+.main__scheduleBtn:hover {
   background-color: #fff;
   color: #001F3F !important;
   cursor: pointer;
@@ -177,24 +130,14 @@
 }
 
 @media screen and (max-width: 1000px) {
-  .exploreText {
+  .main__exploreText {
     font-size: 4rem;
-    top: 50%;
-  }
-
-  .scheduleBtn {
-    top: 70%;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .exploreText {
+  .main__exploreText {
     font-size: 3rem;
-    top: 40%;
-  }
-
-  .scheduleBtn {
-    top: 55%;
   }
 }
 
@@ -213,36 +156,32 @@
     width: 70%;
   }
 
-  .exploreText {
-    font-size: 3rem;
-    top: 28%;
-  }
-
-  .scheduleBtn {
-    top: 40%;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .exploreText {
+  .main__exploreText {
     font-size: 2.5rem;
-    top: 25%;
   }
 
-  .scheduleBtn {
+  .main__scheduleBtn {
     font-size: 1rem;
-    top: 35%;
+    padding: 15px;
   }
 }
 
-@media screen and (max-width: 400px) {
-  .exploreText {
+@media screen and (max-width: 450px) {
+  .main__exploreText {
     font-size: 2rem;
-    top: 26%;
   }
 
-  .scheduleBtn {
+  .main__scheduleBtn {
     font-size: 0.75rem;
-    top: 37%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .main__exploreText {
+    font-size: 1.75rem;
+  }
+
+  .main__scheduleBtn {
+    font-size: 0.75rem;
   }
 }
