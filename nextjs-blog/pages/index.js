@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics/react';
+
 import styles from '../styles/Home.module.css';
 import Image from 'next/image'
 
@@ -13,6 +15,7 @@ import card4 from '../public/assets/img/Hot-Stone.jpg';
 
 export default function Home() {
   return (
+    <>
     <div className={styles.container}>
       {/* <Head>
         <title>Create Next App</title>
@@ -153,5 +156,8 @@ export default function Home() {
         }
       `}</style>
     </div>
+
+      <Analytics />
+    </>
   )
 }
