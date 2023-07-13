@@ -5,36 +5,37 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #000;
+  /*  Need to Adjust Later */
+  color: whitesmoke;
+}
+
+.container a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .title a {
-  color: #0070f3;
+  color: blanchedalmond;
   text-decoration: none;
 }
 
 .title a:hover,
 .title a:focus,
 .title a:active {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .title {
-  margin: 0 0 1rem;
+  font-weight: 200;
+  margin: 3rem 0;
   line-height: 1.15;
   font-size: 3.6rem;
-}
-
-.title {
   text-align: center;
 }
 
-.title,
 .description {
   text-align: center;
-}
-
-
-.description {
   line-height: 1.5;
   font-size: 1.5rem;
 }
@@ -44,9 +45,31 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-
-  max-width: 800px;
+  width: 80vw;
   margin-top: 3rem;
+  margin-bottom: 3rem;
+  gap: 3rem;
+}
+
+.grid__card {
+  border: 1px solid #eaeaea;
+  height: 20rem;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.grid__card_img {
+  width: 100%;
+  height: 70%;
+  margin-bottom: 2rem;
+}
+
+.grid__card span {
+  font-size: 1.5rem;
+  font-weight: 200;
 }
 
 .card {
@@ -61,12 +84,12 @@
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.card:hover,
+/* .card:hover,
 .card:focus,
 .card:active {
   color: #0070f3;
   border-color: #0070f3;
-}
+} */
 
 .card h3 {
   margin: 0 0 1rem 0;
@@ -83,9 +106,143 @@
   height: 1em;
 }
 
-@media (max-width: 600px) {
+.logoSmallJpg {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+.mainImage {
+  position: relative;
+  max-width: 100vw;
+  width: 100vw;
+  height: auto;
+  transition: transform 0.5s ease-in-out;
+  opacity: 0.8;
+}
+
+.mainImage:hover {
+  transform: scale(1.02);
+  /* filter: brightness(0.8) contrast(1.2); */
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.exploreText {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  font-weight: 100;
+  position: absolute;
+  top: 60%;
+  /*  Need to Adjust Later */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.scheduleBtn {
+  position: absolute;
+  top: 90%;
+  /*  Need to Adjust Later */
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  transition: all .5s ease;
+  /* color: #fff; */
+  border: 2px solid white;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  font-size: 1.25rem;
+  background-color: transparent;
+  padding: 20px;
+  outline: none;
+  border-radius: 4px;
+}
+
+.scheduleBtn {
+  color: white;
+  text-decoration: none;
+}
+
+.scheduleBtn:hover {
+  background-color: #fff;
+  color: #001F3F !important;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 1000px) {
+  .exploreText {
+    font-size: 4rem;
+    top: 50%;
+  }
+
+  .scheduleBtn {
+    top: 70%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .exploreText {
+    font-size: 3rem;
+    top: 40%;
+  }
+
+  .scheduleBtn {
+    top: 55%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .logoJpg {
+    width: 70%;
+    height: auto;
+  }
+
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+
+  .grid__card {
+    width: 70%;
+  }
+
+  .exploreText {
+    font-size: 3rem;
+    top: 28%;
+  }
+
+  .scheduleBtn {
+    top: 40%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .exploreText {
+    font-size: 2.5rem;
+    top: 25%;
+  }
+
+  .scheduleBtn {
+    font-size: 1rem;
+    top: 35%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .exploreText {
+    font-size: 2rem;
+    top: 20%;
+  }
+
+  .scheduleBtn {
+    font-size: 0.75rem;
+    top: 30%;
   }
 }
