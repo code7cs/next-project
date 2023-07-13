@@ -12,8 +12,8 @@ const center = {
 };
 
 const position = {
-  lat: 39.015047057742, // Set the latitude for the marker
-  lng: -74.87426567174822, // Set the longitude for the marker
+  lat: 39.014888, // Set the latitude for the marker
+  lng: -74.8743, // Set the longitude for the marker
 };
 
 const infoWindowText = `
