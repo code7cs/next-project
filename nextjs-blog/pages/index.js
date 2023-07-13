@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
+import Map from "../components/Map";
 
 import styles from '../styles/Home.module.css';
 import Image from 'next/image'
@@ -16,96 +17,100 @@ import card4 from '../public/assets/img/Hot-Stone.jpg';
 export default function Home() {
   return (
     <>
-    <div className={styles.container}>
-      {/* <Head>
+      <div className={styles.container}>
+        {/* <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head> */}
 
-      <main>
-        <div className={styles.header}>
-          <div className={styles.header__logo}>
+        <main>
+          <div className={styles.header}>
+            <div className={styles.header__logo}>
+              <Image
+                src={header__logoIcon}
+                alt="Eastern Spa Logo Icon"
+                className={styles.header__logoIcon}
+              />
+              <br />
+              <Image
+                src={header__logoText}
+                alt="Eastern Spa Logo Text"
+                className={styles.header__logoText}
+              />
+            </div>
+            <div className={styles.header__address}>
+              <p>1304 NJ-47 unit w</p>
+              <p>Rio Grande, NJ 08242</p>
+              <p>(609) 770-3693</p>
+            </div>
+          </div>
+
+
+          {/* Main Section */}
+          <div className={styles.main__imageWrapper}>
             <Image
-              src={header__logoIcon}
-              alt="Eastern Spa Logo Icon"
-              className={styles.header__logoIcon}
+              className={styles.main__image}
+              src={easternSpaJpg}
+              alt="Eastern Spa"
             />
-            <br />
-            <Image
-              src={header__logoText}
-              alt="Eastern Spa Logo Text"
-              className={styles.header__logoText}
-            />
-          </div>
-          <div className={styles.header__address}>
-            <p>1304 NJ-47 unit w</p>
-            <p>Rio Grande, NJ 08242</p>
-            <p>(609) 770-3693</p>
-          </div>
-        </div>
+            <div className={styles.main__exploreText}>
+              <p >EXPLORE EASTERN SPA</p>
+            </div>
 
-
-        {/* Main Section */}
-        <div className={styles.main__imageWrapper}>
-          <Image
-            className={styles.main__image}
-            src={easternSpaJpg}
-            alt="Eastern Spa"
-          />
-          <div className={styles.main__exploreText}>
-            <p >EXPLORE EASTERN SPA</p>
+            <a className={styles.main__scheduleBtn} href="tel:+16097703693">Call To Learn More</a>
           </div>
 
-          <a className={styles.main__scheduleBtn} href="tel:+16097703693">Call To Learn More</a>
-        </div>
-
-        <div className={styles.main__intro}>
-          <h1>Eastern Spa Overview</h1>
-          <hr />
-          <p>
-            We provide high quality Chinese massage therapy in Rio Grande, NJ.
-            Our expert therapists are trained in numerous therapies including Swedish and deep tissue massages, reflexology, and more.
-            Eastern Spa has been providing relaxing comfort over 10 years.
-            Our facility offers three rooms, multiple services, all day hours and more.
-          </p>
-        </div>
-
-        {/* Card Section */}
-        <div className={styles.grid}>
-          <div className={styles.grid__card}>
-            <Image className={styles.grid__card_img} src={card1} />
-            <span>Swedish</span>
+          {/* Intro paragraph Section */}
+          <div className={styles.main__intro}>
+            <h1>Eastern Spa Overview</h1>
+            <hr />
+            <p>
+              We provide high quality Chinese massage therapy in Rio Grande, NJ.
+              Our expert therapists are trained in numerous therapies including Swedish and deep tissue massages, reflexology, and more.
+              Eastern Spa has been providing relaxing comfort over 10 years.
+              Our facility offers three single rooms and one family size room, and multiple services, all day hours and more.
+            </p>
           </div>
 
-          <div className={styles.grid__card}>
-            <Image className={styles.grid__card_img} src={card2} />
-            <span>Deep Tissue</span>
+          {/* Google Map */}
+          <Map address="1600 Amphitheatre Parkway, Mountain View, CA" />
+
+          {/* Card Section */}
+          <div className={styles.grid}>
+            <div className={styles.grid__card}>
+              <Image className={styles.grid__card_img} src={card1} />
+              <span>Swedish</span>
+            </div>
+
+            <div className={styles.grid__card}>
+              <Image className={styles.grid__card_img} src={card2} />
+              <span>Deep Tissue</span>
+            </div>
+
+            <div className={styles.grid__card}>
+              <Image className={styles.grid__card_img} src={card3} />
+              <span>Foot Massage</span>
+            </div>
+
+            <div className={styles.grid__card}>
+              <Image className={styles.grid__card_img} src={card4} />
+              <span>Hot Stone</span>
+            </div>
           </div>
+        </main>
 
-          <div className={styles.grid__card}>
-            <Image className={styles.grid__card_img} src={card3} />
-            <span>Foot Massage</span>
-          </div>
+        <footer className={styles.footer}>
+          <Image className={styles.footer__logoIcon} src={header__logoIcon} />
+          <a
+            href="https://eastern-spa.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Copyright © 2023 Eastern Spa LLC. All rights reserved.
+          </a>
+        </footer>
 
-          <div className={styles.grid__card}>
-            <Image className={styles.grid__card_img} src={card4} />
-            <span>Hot Stone</span>
-          </div>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <Image className={styles.footer__logoIcon} src={header__logoIcon} />
-        <a
-          href="https://eastern-spa.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Copyright © 2023 Eastern Spa LLC. All rights reserved.
-        </a>
-      </footer>
-
-      <style jsx>{`
+        <style jsx>{`
         main {
           flex: 1;
           display: flex;
@@ -142,7 +147,7 @@ export default function Home() {
         }
       `}</style>
 
-      <style jsx global>{`
+        <style jsx global>{`
         html,
         body {
           padding: 0;
@@ -155,7 +160,7 @@ export default function Home() {
           box-sizing: border-box;
         }
       `}</style>
-    </div>
+      </div>
 
       <Analytics />
     </>
