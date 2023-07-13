@@ -238,11 +238,11 @@
 @media screen and (max-width: 400px) {
   .exploreText {
     font-size: 2rem;
-    top: 20%;
+    top: 26%;
   }
 
   .scheduleBtn {
     font-size: 0.75rem;
-    top: 30%;
+    top: 37%;
   }
 }
