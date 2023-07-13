@@ -1,28 +1,25 @@
-import { Analytics } from '@vercel/analytics/react';
-import Map from "../components/Map";
+import { Analytics } from "@vercel/analytics/react";
+// import Map from "../components/Map";
+import Map2 from "../components/Map2";
+import React, { useState } from "react";
 
-import styles from '../styles/Home.module.css';
-import Image from 'next/image'
+import styles from "../styles/Home.module.css";
+import Image from "next/image";
 
-import easternSpaJpg from '../public/assets/img/eastern-spa.jpg'
+import easternSpaJpg from "../public/assets/img/eastern-spa.jpg";
 
-import header__logoText from '../public/assets/img/spa-logo-text-only.png'
-import header__logoIcon from '../public/assets/img/logo-small.jpg'
+import header__logoText from "../public/assets/img/spa-logo-text-only.png";
+import header__logoIcon from "../public/assets/img/logo-small.jpg";
 
-import card1 from '../public/assets/img/Swedish2.jpg';
-import card2 from '../public/assets/img/deep.png';
-import card3 from '../public/assets/img/foot-massage.jpg';
-import card4 from '../public/assets/img/Hot-Stone.jpg';
+import card1 from "../public/assets/img/Swedish2.jpg";
+import card2 from "../public/assets/img/deep.png";
+import card3 from "../public/assets/img/foot-massage.jpg";
+import card4 from "../public/assets/img/Hot-Stone.jpg";
 
 export default function Home() {
   return (
     <>
       <div className={styles.container}>
-        {/* <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head> */}
-
         <main>
           <div className={styles.header}>
             <div className={styles.header__logo}>
@@ -45,7 +42,6 @@ export default function Home() {
             </div>
           </div>
 
-
           {/* Main Section */}
           <div className={styles.main__imageWrapper}>
             <Image
@@ -54,10 +50,12 @@ export default function Home() {
               alt="Eastern Spa"
             />
             <div className={styles.main__exploreText}>
-              <p >EXPLORE EASTERN SPA</p>
+              <p>EXPLORE EASTERN SPA</p>
             </div>
 
-            <a className={styles.main__scheduleBtn} href="tel:+16097703693">Call To Learn More</a>
+            <a className={styles.main__scheduleBtn} href="tel:+16097703693">
+              Call To Learn More
+            </a>
           </div>
 
           {/* Intro paragraph Section */}
@@ -66,14 +64,31 @@ export default function Home() {
             <hr />
             <p>
               We provide high quality Chinese massage therapy in Rio Grande, NJ.
-              Our expert therapists are trained in numerous therapies including Swedish and deep tissue massages, reflexology, and more.
-              Eastern Spa has been providing relaxing comfort over 10 years.
-              Our facility offers three single rooms and one family size room, and multiple services, all day hours and more.
+              Our expert therapists are trained in numerous therapies including
+              Swedish and deep tissue massages, reflexology, and more. Eastern
+              Spa has been providing relaxing comfort over 10 years. Our
+              facility offers three single rooms and one family size room, and
+              multiple services, all day hours and more.
             </p>
           </div>
 
           {/* Google Map */}
-          <Map address="1600 Amphitheatre Parkway, Mountain View, CA" />
+          <div className={styles.map}>
+            <div className={styles.map__text}>
+              <h1>Eastern Spa LLC &reg;</h1>
+              <span>1304 NJ-47 unit w</span>
+              <span>Rio Grande, NJ 08242</span>
+
+              <div>
+                <h2>Mon - Sun 10am - 10pm</h2>
+                <h2>Call now: 609.770.3693</h2>
+                <h2>or Walk-ins Welcome!</h2>
+              </div>
+            </div>
+            <div className={styles.map__map}>
+              <Map2 />
+            </div>
+          </div>
 
           {/* Card Section */}
           <div className={styles.grid}>
@@ -111,58 +126,58 @@ export default function Home() {
         </footer>
 
         <style jsx>{`
-        main {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        footer img {
-          margin-left: 0.5rem;
-        }
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
-          font-size: 12px;
-        }
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-      `}</style>
+          main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+          footer {
+            width: 100%;
+            height: 100px;
+            border-top: 1px solid #eaeaea;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          footer img {
+            margin-left: 0.5rem;
+          }
+          footer a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            font-size: 12px;
+          }
+          code {
+            background: #fafafa;
+            border-radius: 5px;
+            padding: 0.75rem;
+            font-size: 1.1rem;
+            font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+              DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+          }
+        `}</style>
 
         <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
+          html,
+          body {
+            padding: 0;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+              Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+              sans-serif;
+          }
+          * {
+            box-sizing: border-box;
+          }
+        `}</style>
       </div>
 
       <Analytics />
     </>
-  )
+  );
 }

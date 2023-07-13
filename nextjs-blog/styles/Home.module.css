@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #8CAA8F;
+  background-color: #8caa8f;
   /*  Need to Adjust Later */
   color: whitesmoke;
 }
@@ -94,7 +94,6 @@
   height: auto;
 }
 
-
 .header__address {
   display: flex;
   flex-direction: column;
@@ -148,10 +147,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   /* color: #fff; */
   border: 2px solid white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   text-align: center;
   line-height: 1;
@@ -202,14 +201,123 @@
   line-height: 1.5;
 }
 
-@media screen and (max-width: 1000px) {
+.map {
+  background-image: url("../public/assets/img/location-bg.jpg");
+  display: flex;
+  width: 100vw;
+  height: 36rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
 
+.map__map {
+  width: 40vw;
+  height: 69%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map__text {
+  width: 40vw;
+  background: #366368;
+  height: 69%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 5rem;
+}
+
+.map__text h1 {
+  font-weight: 300;
+  font-size: 2.5rem;
+  line-height: 0;
+  font-family: Apple Chancery, cursive;
+}
+
+.map__text span {
+  line-height: 2;
+}
+
+.map__text div {
+  /* border-left: 3px solid white; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: s;
+}
+
+.map__text div {
+  position: relative;
+  padding-left: 1rem;
+  /* Add some padding to the left side */
+  margin-top: 1.5rem;
+}
+
+.map__text div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 85%;
+  /* Set the desired height of the left border */
+  width: 3px;
+  /* Set the width of the left border */
+  background-color: white;
+  /* Set the color of the left border */
+}
+
+.map__text h2 {
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 0;
+  font-style: italic;
+}
+
+@media screen and (max-width: 1200px) {
+  .map__text {
+    padding-left: 3rem;
+  }
+
+  .map h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
   .grid__card {
     width: 70%;
   }
 
   .main__exploreText {
     font-size: 4rem;
+  }
+
+  .map {
+    display: flex;
+    height: unset;
+    flex-direction: column;
+  }
+
+  .map__text {
+    align-items: center;
+    padding-top: 1.5rem;
+    padding-left: 0;
+    padding-bottom: 1.5rem;
+    margin-top: 3rem;
+    width: 70%;
+  }
+
+  .map h2 {
+    font-size: 2rem;
+  }
+
+  .map__map {
+    width: 70vw;
+    margin-bottom: 2rem;
   }
 }
 
@@ -226,6 +334,10 @@
   .grid__card {
     width: 70%;
   }
+
+  .map h2 {
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -236,7 +348,6 @@
   .grid__card_img {
     margin-bottom: 1.5rem;
   }
-
 
   .header {
     flex-direction: column;
@@ -255,7 +366,6 @@
     height: auto;
   }
 
-
   .header__address {
     align-items: center;
     margin-bottom: 2rem;
@@ -269,6 +379,10 @@
   .main__scheduleBtn {
     font-size: 1rem;
     padding: 15px;
+  }
+
+  .main__intro {
+    min-height: 18rem;
   }
 
   .main__intro h1 {
@@ -285,6 +399,14 @@
   .main__intro p {
     font-size: 13px;
   }
+
+  .map h1 {
+    font-size: 2rem;
+  }
+
+  .map h2 {
+    font-size: 1.25rem;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -295,7 +417,7 @@
   .grid__card_img {
     margin-bottom: 1.5rem;
     max-height: 70%;
-    min-height: 70%
+    min-height: 70%;
   }
 
   .main__exploreText {
@@ -304,6 +426,14 @@
 
   .main__scheduleBtn {
     font-size: 0.75rem;
+  }
+
+  .map h1 {
+    font-size: 1.5rem;
+  }
+
+  .map h2 {
+    font-size: 1rem;
   }
 }
 
@@ -315,17 +445,26 @@
   .grid__card_img {
     margin-bottom: 1rem;
     max-height: 60%;
-    min-height: 60%
+    min-height: 60%;
   }
 
   .grid__card span {
     font-size: 1.25rem;
   }
+
   .main__exploreText {
     font-size: 1.75rem;
   }
 
   .main__scheduleBtn {
+    font-size: 0.75rem;
+  }
+
+  .map span {
+    font-size: 0.75rem;
+  }
+
+  .map h2 {
     font-size: 0.75rem;
   }
 }
