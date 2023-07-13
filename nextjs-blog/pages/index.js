@@ -1,9 +1,11 @@
-import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Image from 'next/image'
+
 import easternSpaJpg from '../public/assets/img/eastern-spa.jpg'
-import logoJpg from '../public/assets/img/spa-logo.jpg'
-import footer__logoSmall from '../public/assets/img/logo-small.jpg'
+
+import header__logoText from '../public/assets/img/spa-logo-text-only.png'
+import header__logoIcon from '../public/assets/img/logo-small.jpg'
+
 import card1 from '../public/assets/img/Swedish2.jpg';
 import card2 from '../public/assets/img/deep.png';
 import card3 from '../public/assets/img/foot-massage.jpg';
@@ -18,11 +20,27 @@ export default function Home() {
       </Head> */}
 
       <main>
-        <Image
-          src={logoJpg}
-          alt="Eastern Spa"
-          className={styles.logoJpg}
-        />
+        <div className={styles.header}>
+          <div className={styles.header__logo}>
+            <Image
+              src={header__logoIcon}
+              alt="Eastern Spa Logo Icon"
+              className={styles.header__logoIcon}
+            />
+            <br />
+            <Image
+              src={header__logoText}
+              alt="Eastern Spa Logo Text"
+              className={styles.header__logoText}
+            />
+          </div>
+          <div className={styles.header__address}>
+            <p>1304 NJ-47 unit w</p>
+            <p>Rio Grande, NJ 08242</p>
+            <p>(609) 770-3693</p>
+          </div>
+        </div>
+
 
         {/* Main Section */}
         <div className={styles.main__imageWrapper}>
@@ -35,7 +53,18 @@ export default function Home() {
             <p >EXPLORE EASTERN SPA</p>
           </div>
 
-          <a className={styles.main__scheduleBtn} href="tel:+12012386649">Call To Learn More</a>
+          <a className={styles.main__scheduleBtn} href="tel:+16097703693">Call To Learn More</a>
+        </div>
+
+        <div className={styles.main__intro}>
+          <h1>Eastern Spa Overview</h1>
+          <hr />
+          <p>
+            We provide high quality Chinese massage therapy in Rio Grande, NJ.
+            Our expert therapists are trained in numerous therapies including Swedish and deep tissue massages, reflexology, and more.
+            Eastern Spa has been providing relaxing comfort over 10 years.
+            Our facility offers three rooms, multiple services, all day hours and more.
+          </p>
         </div>
 
         {/* Card Section */}
@@ -63,7 +92,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <Image className={styles.footer__logoSmall} src={footer__logoSmall} />
+        <Image className={styles.footer__logoIcon} src={header__logoIcon} />
         <a
           href="https://eastern-spa.com"
           target="_blank"

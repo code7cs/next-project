@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #000;
+  background-color: #8CAA8F;
   /*  Need to Adjust Later */
   color: whitesmoke;
 }
@@ -15,7 +15,7 @@
   text-decoration: none;
 }
 
-.footer__logoSmall {
+.footer__logoIcon {
   width: 2rem;
   height: 2rem;
   margin-right: 1rem;
@@ -30,11 +30,16 @@
   margin-top: 3rem;
   margin-bottom: 3rem;
   gap: 3rem;
+  /* background-image: url('../public/assets/img/header-background.jpg');
+  background-position: center center;
+    background-repeat: no-repeat;
+    background-size:auto; */
 }
 
 .grid__card {
   border: 1px solid #eaeaea;
-  height: 20rem;
+  /* border-radius: 1rem; */
+  height: 28rem;
   width: 40%;
   display: flex;
   flex-direction: column;
@@ -53,13 +58,53 @@
 
 .grid__card_img {
   width: 100%;
-  height: 70%;
+  max-height: 80%;
+  min-height: 80%;
   margin-bottom: 2rem;
+  /* clip-path: inset(0 0 32% 0); */
 }
 
 .grid__card span {
   font-size: 1.5rem;
   font-weight: 200;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__logoIcon {
+  width: 5rem;
+  height: 5rem;
+  margin: 2rem 1rem 2rem 2rem;
+}
+
+.header__logoText {
+  margin: 2rem 0;
+  width: 15rem;
+  height: auto;
+}
+
+
+.header__address {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  margin-right: 2rem;
+}
+
+.header__address p {
+  margin: 0.25rem 0;
 }
 
 .main__imageWrapper {
@@ -124,9 +169,36 @@
 
 .main__scheduleBtn:hover {
   background-color: #fff;
-  color: #001F3F !important;
+  color: #366368 !important;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.main__intro {
+  background-color: #366368;
+  min-height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: -0.5rem;
+}
+
+.main__intro h1 {
+  margin-top: 4rem;
+  font-weight: 500;
+}
+
+.main__intro hr {
+  width: 30%;
+  margin-bottom: 2rem;
+}
+
+.main__intro p {
+  max-width: 70%;
+  text-align: justify;
+  text-justify: auto;
+  line-height: 1.5;
 }
 
 @media screen and (max-width: 1000px) {
@@ -139,13 +211,6 @@
   .main__exploreText {
     font-size: 3rem;
   }
-}
-
-@media screen and (max-width: 600px) {
-  .logoJpg {
-    width: 70%;
-    height: auto;
-  }
 
   .grid {
     width: 100%;
@@ -154,6 +219,41 @@
 
   .grid__card {
     width: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid__card {
+    height: 25rem;
+  }
+
+  .grid__card_img {
+    margin-bottom: 1.5rem;
+  }
+
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header__logoIcon {
+    width: 4rem;
+    height: 4rem;
+    margin: 2rem 1rem 2rem 0rem;
+  }
+
+  .header__logoText {
+    margin: 2rem 0;
+    width: 10rem;
+    height: auto;
+  }
+
+
+  .header__address {
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-right: 0;
   }
 
   .main__exploreText {
@@ -164,9 +264,34 @@
     font-size: 1rem;
     padding: 15px;
   }
+
+  .main__intro h1 {
+    margin-top: 3rem;
+    font-weight: 400;
+    font-size: 1.25rem;
+  }
+
+  .main__intro hr {
+    width: 50%;
+    margin-bottom: 1rem;
+  }
+
+  .main__intro p {
+    font-size: 13px;
+  }
 }
 
 @media screen and (max-width: 450px) {
+  .grid__card {
+    height: 16rem;
+  }
+
+  .grid__card_img {
+    margin-bottom: 1.5rem;
+    max-height: 70%;
+    min-height: 70%
+  }
+
   .main__exploreText {
     font-size: 2rem;
   }
@@ -177,6 +302,19 @@
 }
 
 @media screen and (max-width: 360px) {
+  .grid__card {
+    height: 10rem;
+  }
+
+  .grid__card_img {
+    margin-bottom: 1rem;
+    max-height: 60%;
+    min-height: 60%
+  }
+
+  .grid__card span {
+    font-size: 1.25rem;
+  }
   .main__exploreText {
     font-size: 1.75rem;
   }
