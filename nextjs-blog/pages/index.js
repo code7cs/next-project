@@ -94,7 +94,7 @@ export default function Home() {
                     <span>609.770.3693</span>
                   </a>
                 </h2>
-                <h2>Walk-ins Welcome!</h2>
+                <h2>Apps/Walk-ins Welcome!</h2>
               </div>
             </div>
             <div className={styles.map__map}>
@@ -107,21 +107,39 @@ export default function Home() {
             <div className={styles.grid__card}>
               <Image className={styles.grid__card_img} src={card1} />
               <span>Swedish</span>
+              <p className={styles.grid__card_paragraph}>
+                Swedish massage is designed to relax the entire body by rubbing
+                the muscles in long, gliding strokes in the direction of blood
+                returning to the heart.
+              </p>
             </div>
 
             <div className={styles.grid__card}>
               <Image className={styles.grid__card_img} src={card2} />
               <span>Deep Tissue</span>
+              <p className={styles.grid__card_paragraph}>
+                Deep tissue massage targets chronic tension in muscles that lie
+                far below the body's surface. Slow strokes or friction movements
+                that go across the muscle grain.
+              </p>
             </div>
 
             <div className={styles.grid__card}>
               <Image className={styles.grid__card_img} src={card3} />
               <span>Foot Massage</span>
+              <p className={styles.grid__card_paragraph}>
+                Foot massage involves working on the feet with pressure,
+                manually promote relaxation and health.
+              </p>
             </div>
 
             <div className={styles.grid__card}>
               <Image className={styles.grid__card_img} src={card4} />
               <span>Hot Stone</span>
+              <p className={styles.grid__card_paragraph}>
+                Hot stone used to help you relax and ease tense muscles and
+                damaged soft tissues throughout your body.
+              </p>
             </div>
           </div>
         </main>
