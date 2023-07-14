@@ -220,7 +220,6 @@
 
 .main__intro {
   background-color: #366368;
-  min-height: 23rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -244,6 +243,7 @@
   text-align: justify;
   text-justify: auto;
   line-height: 1.5;
+  margin-bottom: 4rem;
 }
 
 /**
@@ -461,9 +461,6 @@
     padding: 15px;
   }
 
-  .main__intro {
-    min-height: 18rem;
-  }
 
   .main__intro h1 {
     margin-top: 3rem;
@@ -478,6 +475,7 @@
 
   .main__intro p {
     font-size: 13px;
+    margin-bottom: 3rem;
   }
 
   .map h1 {
