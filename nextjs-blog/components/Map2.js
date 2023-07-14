@@ -13,21 +13,29 @@ const center = {
 
 const position = {
   lat: 39.014888, // Set the latitude for the marker
-  lng: -74.8743, // Set the longitude for the marker
+  lng: -74.87435, // Set the longitude for the marker
 };
-
-const infoWindowText = `
-<div>
-  <h3 style="color: black;">💆‍♀️ Eastern Spa LLC</h3>
-  <p style="color: black;">1304 NJ-47 unit w, Rio Grande, NJ 08242</p>
-</div>
-`;
 
 const handleMarkerLoad = (marker) => {
   // Display an info window when the marker is clicked
-  const infoWindow = new google.maps.InfoWindow({
-    content: infoWindowText,
+  const infoWindow = new google.maps.InfoWindow();
+  const geocoder = new google.maps.Geocoder();
+  geocoder.geocode({ location: marker.position }, (results, status) => {
+    if (status === google.maps.GeocoderStatus.OK && results.length > 0) {
+      const content = `
+      <div>
+       <h3 style="color: black;">💆‍♀️ Eastern Spa LLC</h3>
+       <p style="color: black;">1304 NJ-47 unit w, Rio Grande, NJ 08242</p>
+       <a style="color: blue" href="https://www.google.com/maps?q=${encodeURIComponent(
+         "Eastern Spa Rio Grande"
+       )}" target="_blank">Open in Google Maps</a>
+      </div>`;
+      infoWindow.setContent(content);
+    } else {
+      infoWindow.setContent("Location details not available");
+    }
   });
+
   marker.addListener("click", () => {
     infoWindow.open(marker.getMap(), marker);
   });
