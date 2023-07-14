@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/react";
 // import Map from "../components/Map";
+import Head from "next/head";
 import Map2 from "../components/Map2";
 import React, { useState } from "react";
 
@@ -19,6 +20,12 @@ import card4 from "../public/assets/img/Hot-Stone.jpg";
 export default function Home() {
   return (
     <>
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+        />
+      </Head>
       <div className={styles.container}>
         <main>
           <div className={styles.header}>
@@ -81,8 +88,13 @@ export default function Home() {
 
               <div>
                 <h2>Mon - Sun 10am - 10pm</h2>
-                <h2>Call now: 609.770.3693</h2>
-                <h2>or Walk-ins Welcome!</h2>
+                <h2 className={styles.map__textPhone}>
+                  <a href="tel:+16097703693">
+                    <i className="fa fa-phone"></i>&nbsp;
+                    <span>609.770.3693</span>
+                  </a>
+                </h2>
+                <h2>Walk-ins Welcome!</h2>
               </div>
             </div>
             <div className={styles.map__map}>
