@@ -45,7 +45,9 @@ export default function Home() {
             <div className={styles.header__address}>
               <p>1304 NJ-47 unit w</p>
               <p>Rio Grande, NJ 08242</p>
-              <p>(609) 770-3693</p>
+              <p>
+                <a href="tel:+16097703693">(609) 770-3693</a>
+              </p>
             </div>
           </div>
 
@@ -88,13 +90,13 @@ export default function Home() {
 
               <div>
                 <h2>Mon - Sun 10am - 10pm</h2>
+                <h2>Apps/Walk-ins Welcome!</h2>
                 <h2 className={styles.map__textPhone}>
                   <a href="tel:+16097703693">
                     <i className="fa fa-phone"></i>&nbsp;
                     <span>609.770.3693</span>
                   </a>
                 </h2>
-                <h2>Apps/Walk-ins Welcome!</h2>
               </div>
             </div>
             <div className={styles.map__map}>
@@ -103,6 +105,10 @@ export default function Home() {
           </div>
 
           {/* Card Section */}
+          <div className={styles.grid__title}>
+            <span>Our Services</span>
+          </div>
+
           <div className={styles.grid}>
             <div className={styles.grid__card}>
               <Image className={styles.grid__card_img} src={card1} />
