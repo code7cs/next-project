@@ -1,10 +1,10 @@
 import { Analytics } from "@vercel/analytics/react";
 // import Map from "../components/Map";
-import Head from "next/head";
-import Map2 from "../components/Map2";
-import React, { useState } from "react";
 
-import styles from "../styles/Home.module.css";
+import Map2 from "../components/Map2";
+import React from "react";
+
+import styles from "../styles/home.module.css";
 import Image from "next/image";
 
 import easternSpaJpg from "../public/assets/img/eastern-spa.jpg";
@@ -20,12 +20,6 @@ import card4 from "../public/assets/img/Hot-Stone.jpg";
 export default function Home() {
   return (
     <>
-      <Head>
-        <link
-          rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
-        />
-      </Head>
       <div className={styles.container}>
         <main>
           <div className={styles.header}>
@@ -57,6 +51,7 @@ export default function Home() {
               className={styles.main__image}
               src={easternSpaJpg}
               alt="Eastern Spa"
+              priority={true}
             />
             <div className={styles.main__exploreText}>
               <p>EXPLORE EASTERN SPA</p>
@@ -111,7 +106,7 @@ export default function Home() {
 
           <div className={styles.grid}>
             <div className={styles.grid__card}>
-              <Image className={styles.grid__card_img} src={card1} />
+              <Image className={styles.grid__card_img} src={card1} alt="Swedish"/>
               <span>Swedish</span>
               <p className={styles.grid__card_paragraph}>
                 Swedish massage is designed to relax the entire body by rubbing
@@ -121,7 +116,7 @@ export default function Home() {
             </div>
 
             <div className={styles.grid__card}>
-              <Image className={styles.grid__card_img} src={card2} />
+              <Image className={styles.grid__card_img} src={card2} alt="Deep Tissue"/>
               <span>Deep Tissue</span>
               <p className={styles.grid__card_paragraph}>
                 Deep tissue massage targets chronic tension in muscles that lie
@@ -131,7 +126,7 @@ export default function Home() {
             </div>
 
             <div className={styles.grid__card}>
-              <Image className={styles.grid__card_img} src={card3} />
+              <Image className={styles.grid__card_img} src={card3} alt="Foot Massage"/>
               <span>Foot Massage</span>
               <p className={styles.grid__card_paragraph}>
                 Foot massage involves working on the feet with pressure,
@@ -140,7 +135,7 @@ export default function Home() {
             </div>
 
             <div className={styles.grid__card}>
-              <Image className={styles.grid__card_img} src={card4} />
+              <Image className={styles.grid__card_img} src={card4} alt="Hot stone" />
               <span>Hot Stone</span>
               <p className={styles.grid__card_paragraph}>
                 Hot stone used to help you relax and ease tense muscles and
@@ -151,7 +146,7 @@ export default function Home() {
         </main>
 
         <footer className={styles.footer}>
-          <Image className={styles.footer__logoIcon} src={header__logoIcon} />
+          <Image className={styles.footer__logoIcon} src={header__logoIcon} alt="Eastern Spa Logo" />
           <a
             href="https://eastern-spa.com"
             target="_blank"
