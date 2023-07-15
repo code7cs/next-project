@@ -526,13 +526,13 @@
 
 @media screen and (max-width: 360px) {
   .grid__card {
-    height: 10rem;
+    height: 12rem;
   }
 
   .grid__card_img {
     margin-bottom: 1rem;
     max-height: 60%;
-    min-height: 60%;
+    min-height: 70%;
   }
 
   .grid__card span {
@@ -540,8 +540,8 @@
   }
 
   .grid__card_paragraph {
-    top: -0.75rem;
-    padding: 0.25rem;
+    top: 0.25rem;
+    padding: 0.5rem 0.75rem;
     font-size: 0.75rem;
     text-align: justify;
   }
