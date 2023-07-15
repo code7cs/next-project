@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <title>Eastern Spa Rio Grande</title>
         <meta
           name="description"
           content="Eastern Spa Rio Grande provides high quality Chinese massage therapy in Rio Grande, NJ.
