@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Map2 from "../components/Map2";
 import React from "react";
 
-import styles from "../styles/home.module.css";
+import styles from "../styles/Home.module.css";
 import Image from "next/image";
 
 import easternSpaJpg from "../public/assets/img/eastern-spa.jpg";
