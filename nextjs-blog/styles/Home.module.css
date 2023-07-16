@@ -302,7 +302,6 @@
 .map__text h1 {
   font-weight: 300;
   font-size: 2.5rem;
-  line-height: 0;
   font-family: Apple Chancery, cursive;
 }
 
@@ -348,9 +347,7 @@
 .map__text h2 {
   font-weight: 300;
   font-size: 2rem;
-  line-height: 0;
   font-style: italic;
-  /* margin: 0.5rem; */
 }
 
 .map__textPhone {
