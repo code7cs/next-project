@@ -2,6 +2,7 @@ import { Analytics } from "@vercel/analytics/react";
 // import Map from "../components/Map";
 
 import Map2 from "../components/Map2";
+// import FeedbackForm from "../components/FeedbackForm";
 import React from "react";
 
 import styles from "../styles/Home.module.css";
@@ -161,6 +162,17 @@ export default function Home() {
               </p>
             </div>
           </div>
+
+          {/* Feedback Form Section */}
+          {/* <div className={styles.feedback__wrapper}>
+            <div className={styles.feedback__form}>
+              <h2>Contact Us</h2>
+              <a href="mailto:eastern.spa.rio.grande@gmail.com" target="_blank">
+              <span>eastern.spa.rio.grande@gmail.com</span>
+              </a>
+              <FeedbackForm />
+            </div>
+          </div> */}
         </main>
 
         <footer className={styles.footer}>
