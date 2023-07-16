@@ -82,8 +82,10 @@ export default function Home() {
               <h1>Eastern Spa LLC &reg;</h1>
               <span>1304 NJ-47 unit w</span>
               <span>Rio Grande, NJ 08242</span>
-
-              <div>
+              <div className={styles.map__textOpenDaily}>
+                <span>Open Daily</span>
+              </div>
+              <div className={styles.map__textDiv}>
                 <h2>Mon - Sun 10am - 10pm</h2>
                 <h2>Apps/Walk-ins Welcome!</h2>
                 <h2 className={styles.map__textPhone}>
@@ -106,7 +108,11 @@ export default function Home() {
 
           <div className={styles.grid}>
             <div className={styles.grid__card}>
-              <Image className={styles.grid__card_img} src={card1} alt="Swedish"/>
+              <Image
+                className={styles.grid__card_img}
+                src={card1}
+                alt="Swedish"
+              />
               <span>Swedish</span>
               <p className={styles.grid__card_paragraph}>
                 Swedish massage is designed to relax the entire body by rubbing
@@ -116,7 +122,11 @@ export default function Home() {
             </div>
 
             <div className={styles.grid__card}>
-              <Image className={styles.grid__card_img} src={card2} alt="Deep Tissue"/>
+              <Image
+                className={styles.grid__card_img}
+                src={card2}
+                alt="Deep Tissue"
+              />
               <span>Deep Tissue</span>
               <p className={styles.grid__card_paragraph}>
                 Deep tissue massage targets chronic tension in muscles that lie
@@ -126,7 +136,11 @@ export default function Home() {
             </div>
 
             <div className={styles.grid__card}>
-              <Image className={styles.grid__card_img} src={card3} alt="Foot Massage"/>
+              <Image
+                className={styles.grid__card_img}
+                src={card3}
+                alt="Foot Massage"
+              />
               <span>Foot Massage</span>
               <p className={styles.grid__card_paragraph}>
                 Foot massage involves working on the feet with pressure,
@@ -135,7 +149,11 @@ export default function Home() {
             </div>
 
             <div className={styles.grid__card}>
-              <Image className={styles.grid__card_img} src={card4} alt="Hot stone" />
+              <Image
+                className={styles.grid__card_img}
+                src={card4}
+                alt="Hot stone"
+              />
               <span>Hot Stone</span>
               <p className={styles.grid__card_paragraph}>
                 Hot stone used to help you relax and ease tense muscles and
@@ -146,7 +164,11 @@ export default function Home() {
         </main>
 
         <footer className={styles.footer}>
-          <Image className={styles.footer__logoIcon} src={header__logoIcon} alt="Eastern Spa Logo" />
+          <Image
+            className={styles.footer__logoIcon}
+            src={header__logoIcon}
+            alt="Eastern Spa Logo"
+          />
           <a
             href="https://eastern-spa.com"
             target="_blank"
