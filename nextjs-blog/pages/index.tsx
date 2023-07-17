@@ -13,31 +13,32 @@ import easternSpaJpg from "../public/assets/img/eastern-spa.jpg";
 import header__logoText from "../public/assets/img/spa-logo-text-only.png";
 import header__logoIcon from "../public/assets/img/logo-small.jpg";
 
-import card1 from "../public/assets/img/Swedish2.jpg";
-import card2 from "../public/assets/img/deep.png";
-import card3 from "../public/assets/img/foot-massage.jpg";
-import card4 from "../public/assets/img/Hot-Stone.jpg";
+import card1 from "../public/assets/img/swedish-16-9.jpg";
+import card2 from "../public/assets/img/deep-16-9.jpg";
+import card3 from "../public/assets/img/foot-16-9.jpg";
+import card4 from "../public/assets/img/hot-16-9.jpg";
 
 export default function Home() {
   return (
     <>
-      <div className={styles.container}>
+      <div className="min-h-screen flex flex-col justify-center items-center py-0 px-2 bg-green text-white">
         <main>
-          <div className={styles.header}>
-            <div className={styles.header__logo}>
+          {/* Header */}
+          <div className="flex flex-col items-center w-full my-8 sm:flex-row sm:justify-between">
+            <div className="flex justify-center items-center mb-8 sm:mb-0 sm:ml-8">
               <Image
                 src={header__logoIcon}
                 alt="Eastern Spa Logo Icon"
-                className={styles.header__logoIcon}
+                className="w-12 h-12 mr-4 sm:w-16 sm:h-16"
               />
               <br />
               <Image
                 src={header__logoText}
                 alt="Eastern Spa Logo Text"
-                className={styles.header__logoText}
+                className="w-40"
               />
             </div>
-            <div className={styles.header__address}>
+            <div className="grid place-items-center text-sm sm:mr-8 sm:place-items-end sm:text-base">
               <p>1304 NJ-47 unit w</p>
               <p>Rio Grande, NJ 08242</p>
               <p>
@@ -46,28 +47,39 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Main Section */}
-          <div className={styles.main__imageWrapper}>
+          {/* Main Image - Explore Eastern Spa */}
+          <div className="relative">
             <Image
-              className={styles.main__image}
+              className="max-w-full w-screen h-auto transition-transform duration-500 ease-in-out opacity-90 
+                hover:scale-[1.02] hover:opacity-80 hover:bg-[rgba(0,0,0,0.5)] hover:shadow-[0_0_10px_rgba(0,0,0,0.3)]"
               src={easternSpaJpg}
               alt="Eastern Spa"
               priority={true}
             />
-            <div className={styles.main__exploreText}>
+            <div
+              className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 font-extralight text-3xl w-full text-center
+              sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl
+            "
+            >
               <p>EXPLORE EASTERN SPA</p>
             </div>
 
-            <a className={styles.main__scheduleBtn} href="tel:+16097703693">
+            <a 
+            className="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-linear
+              border-2 border-white rounded-md p-3 uppercase text-center text-xs font-light outline-none bg-transparent
+              hover:bg-white hover:text-darkgreen hover:shadow
+              md:p-5 md:text-xl
+            "
+            href="tel:+16097703693">
               Call To Learn More
             </a>
           </div>
 
           {/* Intro paragraph Section */}
-          <div className={styles.main__intro}>
-            <h1>Eastern Spa Overview</h1>
-            <hr />
-            <p>
+          <div className="bg-darkgreen w-full flex flex-col items-center p-5">
+            <h1 className="font-normal text-xl mt-6">Eastern Spa Overview</h1>
+            <hr className="w-1/2 my-5" />
+            <p className=" text-sm text-justify leading-relaxed mb-6 md:w-3/4">
               We provide high quality Chinese massage therapy in Rio Grande, NJ.
               Our expert therapists are trained in numerous therapies including
               Swedish and deep tissue massages, reflexology, and more. Eastern
@@ -78,32 +90,36 @@ export default function Home() {
           </div>
 
           {/* Google Map */}
-          <div className={styles.map}>
-            <div className={styles.map__text}>
-              <h1>Eastern Spa LLC &reg;</h1>
+          <div className="bg-white-marble w-screen flex flex-col gap-8 items-center text-sm
+          md:flex-row
+          ">
+            <div className="bg-darkgreen mt-12 flex flex-col items-center justify-center p-8 gap-2 min-w-[70%]
+            md:min-w-fit md:w-1/2 md:ml-12 md:mt-0
+            ">
+              <h1 className="text-2xl font-apple mb-2">Eastern Spa LLC &reg;</h1>
               <span>1304 NJ-47 unit w</span>
               <span>Rio Grande, NJ 08242</span>
-              <div className={styles.map__textOpenDaily}>
-                <span>Open Daily</span>
-              </div>
-              <div className={styles.map__textDiv}>
-                <h2>Mon - Sun 10am - 10pm</h2>
-                <h2>Apps/Walk-ins Welcome!</h2>
-                <h2 className={styles.map__textPhone}>
+
+              <span className="italic text-lg">Open Daily</span>
+              <div className="relative pl-3
+                 before:content-[''] before:absolute before:left-0 before:top-[7%] before:-translate-y-50 before:bg-white before:h-[87%] before:w-0.5">
+                <h2 className="italic mb-1">Mon - Sun 10am - 10pm</h2>
+                <h2 className="italic mb-1">Apps/Walk-ins Welcome!</h2>
+                <h2 className="italic">
                   <a href="tel:+16097703693">
                     <i className="fa fa-phone"></i>&nbsp;
-                    <span>609.770.3693</span>
+                    <span className="text-yellow-100 underline">609.770.3693</span>
                   </a>
                 </h2>
               </div>
             </div>
-            <div className={styles.map__map}>
+            <div className="grid place-items-center w-[70%] mb-12 md:w-1/2 md:mr-12 md:mt-12">
               <Map2 />
             </div>
           </div>
 
           {/* Card Section */}
-          <div className={styles.grid__title}>
+          <div className="grid place-items-center mt-12 mb-10 text-2xl font-light">
             <span>Our Services</span>
           </div>
 
@@ -175,9 +191,9 @@ export default function Home() {
           </div> */}
         </main>
 
-        <footer className={styles.footer}>
+        <footer>
           <Image
-            className={styles.footer__logoIcon}
+            className="w-8 h-8 mr-4"
             src={header__logoIcon}
             alt="Eastern Spa Logo"
           />

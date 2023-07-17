@@ -1,20 +1,3 @@
-.container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #8caa8f;
-  /*  Need to Adjust Later */
-  color: whitesmoke;
-}
-
-.container a {
-  color: inherit;
-  text-decoration: none;
-}
-
 .feedback__wrapper {
   background-image: url("../public/assets/img/location-bg.jpg");
   display: flex;
@@ -34,22 +17,10 @@
   justify-content: center;
 }
 
-.footer__logoIcon {
-  width: 2rem;
-  height: 2rem;
-  margin-right: 1rem;
-}
-
 /**
 ** Grid Card Section Style
 **
 **/
-.grid__title {
-  display: grid;
-  place-items: center;
-  margin-top: 3rem;
-  font-size: 2rem;
-}
 
 .grid {
   display: flex;
@@ -57,21 +28,14 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 80vw;
-  margin-top: 3rem;
   margin-bottom: 3rem;
   gap: 3rem;
-  /* background-image: url('../public/assets/img/header-background.jpg');
-  background-position: center center;
-    background-repeat: no-repeat;
-    background-size:auto; */
 }
 
 .grid__card {
   position: relative;
   border: 1px solid #eaeaea;
-  /* border-radius: 1rem; */
-  height: 28rem;
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,7 +47,6 @@
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0.7;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  /* filter: brightness(130%); */
   cursor: pointer;
 }
 
@@ -91,275 +54,32 @@
   filter: brightness(70%) saturate(200%);
 }
 
+.grid__card:hover .grid__card_paragraph {
+  position: absolute;
+  opacity: 1;
+}
+
 .grid__card_img {
   width: 100%;
-  max-height: 80%;
-  min-height: 80%;
-  margin-bottom: 2rem;
-  /* clip-path: inset(0 0 32% 0); */
+  height: auto;
+  object-fit: contain;
 }
 
 .grid__card span {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 300;
+  margin: 0.75rem 0;
 }
 
 .grid__card_paragraph {
   position: absolute;
   opacity: 0;
   transition: opacity 0.7s ease;
-  top: 2rem;
-  transition: opacity 0.7s ease;
-  padding: 2rem;
+  padding: 1rem;
   line-height: 1.5;
   font-weight: 300;
-  font-size: 1.5rem;
-  height: 100%;
-  /* text-align: justify; */
-}
-
-.grid__card_paragraph:hover {
-  position: absolute;
-  opacity: 1;
-}
-
-/**
-** Header Section Style
-**
-**/
-
-.header {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.header__logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header__logoIcon {
-  width: 5rem;
-  height: 5rem;
-  margin: 2rem 1rem 2rem 2rem;
-}
-
-.header__logoText {
-  margin: 2rem 0;
-  width: 15rem;
-  height: auto;
-}
-
-.header__address {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  margin-right: 2rem;
-}
-
-.header__address p {
-  margin: 0.25rem 0;
-}
-
-/**
-** Main Section Style
-**
-**/
-
-.main__imageWrapper {
-  position: relative;
-}
-
-.main__image {
-  max-width: 100vw;
-  width: 100vw;
-  height: auto;
-  transition: transform 0.5s ease-in-out;
-  opacity: 0.8;
-}
-
-.main__image:hover {
-  transform: scale(1.02);
-  /* filter: brightness(0.8) contrast(1.2); */
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0.7;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.main__exploreText {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 6rem;
-  font-weight: 100;
-  position: absolute;
-  top: 30%;
-  /*  Need to Adjust Later */
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.main__scheduleBtn {
-  position: absolute;
-  top: 60%;
-  /*  Need to Adjust Later */
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  transition: all 0.5s ease;
-  /* color: #fff; */
-  border: 2px solid white;
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1;
-  font-size: 1.25rem;
-  background-color: transparent;
-  padding: 20px;
-  outline: none;
-  border-radius: 4px;
-}
-
-.main__scheduleBtn {
-  color: white;
-  text-decoration: none;
-}
-
-.main__scheduleBtn:hover {
-  background-color: #fff;
-  color: #366368 !important;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.main__intro {
-  background-color: #366368;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: -0.5rem;
-  width: 100%;
-}
-
-.main__intro h1 {
-  margin-top: 4rem;
-  font-weight: 500;
-}
-
-.main__intro hr {
-  width: 30%;
-  margin-bottom: 2rem;
-}
-
-.main__intro p {
-  max-width: 70%;
+  font-size: 0.875rem;
   text-align: justify;
-  text-justify: auto;
-  line-height: 1.5;
-  margin-bottom: 4rem;
-}
-
-/**
-** Map Section Style
-**
-**/
-
-.map {
-  background-image: url("../public/assets/img/location-bg.jpg");
-  display: flex;
-  width: 100vw;
-  height: 36rem;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.map__map {
-  width: 40vw;
-  height: 69%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.map__text {
-  width: 40vw;
-  background: #366368;
-  height: 69%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding-left: 5rem;
-}
-
-.map__text h1 {
-  font-weight: 300;
-  font-size: 2.5rem;
-  font-family: Apple Chancery, cursive;
-}
-
-.map__text span {
-  line-height: 2;
-}
-
-.map__textOpenDaily {
-  font-size: 2rem;
-  font-style: italic;
-  font-weight: 300;
-  color: lightyellow;
-}
-.map__text div {
-  /* border-left: 3px solid white; */
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: s;
-}
-
-.map__textDiv {
-  position: relative;
-  padding-left: 1rem;
-  /* Add some padding to the left side */
-  /* margin-top: 1.5rem; */
-}
-
-.map__textDiv::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 85%;
-  /* Set the desired height of the left border */
-  width: 3px;
-  /* Set the width of the left border */
-  background-color: white;
-  /* Set the color of the left border */
-}
-
-.map__text h2 {
-  font-weight: 300;
-  font-size: 2rem;
-  font-style: italic;
-}
-
-.map__textPhone {
-  cursor: pointer;
-  margin: 0;
-}
-
-.map__textPhone span {
-  font-weight: 500;
-  padding: 0;
-  text-decoration: underline;
-  color: lightyellow;
 }
 
 /**
@@ -367,225 +87,29 @@
 **
 **/
 
-@media screen and (max-width: 1200px) {
+@media (min-width: 450px) {
   .grid__card_paragraph {
-    top: 1rem;
-  }
-
-  .map__text {
-    padding-left: 3rem;
-  }
-
-  .map h2,
-  .map__textOpenDaily {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 
-@media screen and (max-width: 1000px) {
-  .grid__card {
-    width: 70%;
-  }
-
-  .main__exploreText {
-    font-size: 4rem;
-  }
-
-  .map {
-    display: flex;
-    height: unset;
-    flex-direction: column;
-  }
-
-  .map__text {
-    align-items: center;
-    padding-top: 1.5rem;
-    padding-left: 0;
-    padding-bottom: 1.5rem;
-    margin-top: 3rem;
-    width: 70%;
-  }
-
-  .map h2,
-  .map__textOpenDaily {
-    font-size: 2rem;
-  }
-
-  .map__map {
-    width: 70vw;
-    margin-bottom: 2rem;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .main__exploreText {
-    font-size: 3rem;
-  }
-
+@media (min-width: 768px) {
   .grid {
-    width: 100%;
-    flex-direction: column;
+    width: unset;
   }
 
   .grid__card {
-    width: 70%;
-  }
-
-  .map h2,
-  .map__textOpenDaily {
-    font-size: 1.5rem;
-    font-weight: 400;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .grid__card {
-    height: 25rem;
-  }
-
-  .grid__card_img {
-    margin-bottom: 1.5rem;
-  }
-
-  .grid__title {
-    font-size: 1.5rem;
+    width: 40%;
   }
 
   .grid__card_paragraph {
-    font-size: 1.25rem;
-  }
-
-  .header {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .header__logoIcon {
-    width: 4rem;
-    height: 4rem;
-    margin: 2rem 1rem 2rem 0rem;
-  }
-
-  .header__logoText {
-    margin: 2rem 0;
-    width: 10rem;
-    height: auto;
-  }
-
-  .header__address {
-    align-items: center;
-    margin-bottom: 2rem;
-    margin-right: 0;
-  }
-
-  .main__exploreText {
-    font-size: 2.5rem;
-  }
-
-  .main__scheduleBtn {
-    font-size: 1rem;
-    padding: 15px;
-  }
-
-
-  .main__intro h1 {
-    margin-top: 3rem;
-    font-weight: 400;
-    font-size: 1.25rem;
-  }
-
-  .main__intro hr {
-    width: 50%;
-    margin-bottom: 1rem;
-  }
-
-  .main__intro p {
-    font-size: 13px;
-    margin-bottom: 3rem;
-  }
-
-  .map h1 {
-    font-size: 2rem;
-  }
-
-  .map h2 {
-    font-size: 1.25rem;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .grid__card {
-    height: 16rem;
-  }
-
-  .grid__card_img {
-    margin-bottom: 1.5rem;
-    max-height: 70%;
-    min-height: 70%;
-  }
-
-  .grid__card span {
-    font-size: 1.3rem;
-  }
-  .grid__card_paragraph {
-    top: 0rem;
-    padding: 0.75rem;
-    font-size: 1rem;
-  }
-
-  .main__exploreText {
-    font-size: 2rem;
-  }
-
-  .main__scheduleBtn {
-    font-size: 0.75rem;
-  }
-
-  .map h1 {
-    font-size: 1.5rem;
-  }
-
-  .map h2,
-  .map__textOpenDaily {
     font-size: 1rem;
   }
 }
 
-@media screen and (max-width: 360px) {
-  .grid__card {
-    height: 12rem;
-  }
-
-  .grid__card_img {
-    margin-bottom: 1rem;
-    max-height: 60%;
-    min-height: 70%;
-  }
-
-  .grid__card span {
-    font-size: 1.25rem;
-  }
-
+@media (min-width: 1024px) {
   .grid__card_paragraph {
-    top: 0.25rem;
-    padding: 0.5rem 0.75rem;
-    font-size: 0.75rem;
-    text-align: justify;
-  }
-
-  .main__exploreText {
-    font-size: 1.75rem;
-  }
-
-  .main__scheduleBtn {
-    font-size: 0.75rem;
-  }
-
-  .map span {
-    font-size: 0.75rem;
-  }
-
-  .map h2 {
-    font-size: 0.75rem;
+    font-size: 1.5rem;
+    padding: 2rem;
   }
 }

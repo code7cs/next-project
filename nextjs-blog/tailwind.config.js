@@ -7,7 +7,22 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        darkgreen: "#366368",
+        green: "#8caa8f",
+        white: "whitesmoke",
+      },
+      backgroundImage: {
+        "white-marble": "url('../public/assets/img/location-bg.jpg')",
+      },
+    },
+    fontFamily: {
+      apple: ["Apple Chancery", "cursive"],
+    },
+    // screens: {
+    // phone: "360px",
+    // },
   },
   plugins: [require("daisyui")],
 };
