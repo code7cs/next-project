@@ -1,9 +1,8 @@
+import React from "react";
 import { Analytics } from "@vercel/analytics/react";
-// import Map from "../components/Map";
 
 import Map2 from "../components/Map2";
-// import FeedbackForm from "../components/FeedbackForm";
-import React from "react";
+import ContactUsForm from "../components/ContactUsForm";
 
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
@@ -50,27 +49,19 @@ export default function Home() {
           {/* Main Image - Explore Eastern Spa */}
           <div className="relative">
             <Image
-              className="max-w-full w-screen h-auto transition-transform duration-500 ease-in-out opacity-90 
-                hover:scale-[1.02] hover:opacity-80 hover:bg-[rgba(0,0,0,0.5)] hover:shadow-[0_0_10px_rgba(0,0,0,0.3)]"
+              className="max-w-full w-screen h-auto transition-transform duration-500 ease-in-out opacity-90 hover:scale-[1.02] hover:opacity-80 hover:bg-[rgba(0,0,0,0.5)] hover:shadow-[0_0_10px_rgba(0,0,0,0.3)]"
               src={easternSpaJpg}
               alt="Eastern Spa"
               priority={true}
             />
-            <div
-              className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 font-extralight text-3xl w-full text-center
-              sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl
-            "
-            >
+            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 font-extralight text-3xl w-full text-center sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl">
               <p>EXPLORE EASTERN SPA</p>
             </div>
 
-            <a 
-            className="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-linear
-              border-2 border-white rounded-md p-3 uppercase text-center text-xs font-light outline-none bg-transparent
-              hover:bg-white hover:text-darkgreen hover:shadow
-              md:p-5 md:text-xl
-            "
-            href="tel:+16097703693">
+            <a
+              className="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-linear border-2 border-white rounded-md p-3 uppercase text-center text-xs font-light outline-none bg-transparent hover:bg-white hover:text-darkgreen hover:shadow md:p-5 md:text-xl"
+              href="tel:+16097703693"
+            >
               Call To Learn More
             </a>
           </div>
@@ -80,7 +71,7 @@ export default function Home() {
             <h1 className="font-normal text-xl mt-6">Eastern Spa Overview</h1>
             <hr className="w-1/2 my-5" />
             <p className=" text-sm text-justify leading-relaxed mb-6 md:w-3/4">
-              We provide high quality Chinese massage therapy in Rio Grande, NJ.
+              We provide high quality Chinese massage therapy in Rio Grande, Cape May, NJ.
               Our expert therapists are trained in numerous therapies including
               Swedish and deep tissue massages, reflexology, and more. Eastern
               Spa has been providing relaxing comfort over 10 years. Our
@@ -90,25 +81,24 @@ export default function Home() {
           </div>
 
           {/* Google Map */}
-          <div className="bg-white-marble w-screen flex flex-col gap-8 items-center text-sm
-          md:flex-row
-          ">
-            <div className="bg-darkgreen mt-12 flex flex-col items-center justify-center p-8 gap-2 min-w-[70%]
-            md:min-w-fit md:w-1/2 md:ml-12 md:mt-0
-            ">
-              <h1 className="text-2xl font-apple mb-2">Eastern Spa LLC &reg;</h1>
+          <div className="bg-white-marble w-screen flex flex-col gap-8 items-center text-sm md:flex-row">
+            <div className="bg-darkgreen mt-12 flex flex-col items-center justify-center p-8 gap-2 min-w-[70%] md:min-w-fit md:w-1/2 md:ml-12 md:mt-0">
+              <h1 className="text-2xl font-apple mb-2">
+                Eastern Spa LLC &reg;
+              </h1>
               <span>1304 NJ-47 unit w</span>
               <span>Rio Grande, NJ 08242</span>
 
               <span className="italic text-lg">Open Daily</span>
-              <div className="relative pl-3
-                 before:content-[''] before:absolute before:left-0 before:top-[7%] before:-translate-y-50 before:bg-white before:h-[87%] before:w-0.5">
+              <div className="relative pl-3 before:content-[''] before:absolute before:left-0 before:top-[7%] before:-translate-y-50 before:bg-white before:h-[87%] before:w-0.5">
                 <h2 className="italic mb-1">Mon - Sun 10am - 10pm</h2>
                 <h2 className="italic mb-1">Apps/Walk-ins Welcome!</h2>
                 <h2 className="italic">
                   <a href="tel:+16097703693">
-                    <i className="fa fa-phone"></i>&nbsp;
-                    <span className="text-yellow-100 underline">609.770.3693</span>
+                    <i className="fas fa-phone"></i>&nbsp;
+                    <span className="text-yellow-100 underline">
+                      609.770.3693
+                    </span>
                   </a>
                 </h2>
               </div>
@@ -179,16 +169,12 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Feedback Form Section */}
-          {/* <div className={styles.feedback__wrapper}>
-            <div className={styles.feedback__form}>
-              <h2>Contact Us</h2>
-              <a href="mailto:eastern.spa.rio.grande@gmail.com" target="_blank">
-              <span>eastern.spa.rio.grande@gmail.com</span>
-              </a>
-              <FeedbackForm />
+          {/* Contact Us Form Section */}
+          <div className="bg-white-marble w-full px-10 py-12">
+            <div className="bg-darkgreen w-full p-6 flex flex-col justify-center items-center">
+              <ContactUsForm />
             </div>
-          </div> */}
+          </div>
         </main>
 
         <footer>

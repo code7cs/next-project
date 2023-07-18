@@ -1,22 +1,3 @@
-.feedback__wrapper {
-  background-image: url("../public/assets/img/location-bg.jpg");
-  display: flex;
-  width: 100vw;
-  height: 30rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.feedback__form {
-  width: 80vw;
-  background: #366368;
-  height: 69%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 /**
 ** Grid Card Section Style
 **
