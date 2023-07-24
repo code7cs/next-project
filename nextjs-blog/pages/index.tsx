@@ -16,12 +16,14 @@ import card1 from "../public/assets/img/swedish-16-9.jpg";
 import card2 from "../public/assets/img/deep-16-9.jpg";
 import card3 from "../public/assets/img/foot-16-9.jpg";
 import card4 from "../public/assets/img/hot-16-9.jpg";
+import CouponAlert from "../components/CouponAlert";
 
 export default function Home() {
   return (
     <>
+      <CouponAlert />
       <div className="min-h-screen flex flex-col justify-center items-center py-0 px-2 bg-green text-white">
-        <main>
+        <main className="mt-[3.625rem]">
           {/* Header */}
           <div className="flex flex-col items-center w-full my-8 sm:flex-row sm:justify-between">
             <div className="flex justify-center items-center mb-8 sm:mb-0 sm:ml-8">
@@ -71,12 +73,12 @@ export default function Home() {
             <h1 className="font-normal text-xl mt-6">Eastern Spa Overview</h1>
             <hr className="w-1/2 my-5" />
             <p className=" text-sm text-justify leading-relaxed mb-6 md:w-3/4">
-              We provide high quality Chinese massage therapy in Rio Grande, Cape May, NJ.
-              Our expert therapists are trained in numerous therapies including
-              Swedish and deep tissue massages, reflexology, and more. Eastern
-              Spa has been providing relaxing comfort over 10 years. Our
-              facility offers three single rooms and one family size room, and
-              multiple services, all day hours and more.
+              We provide high quality Chinese massage therapy in Rio Grande,
+              Cape May, NJ. Our expert therapists are trained in numerous
+              therapies including Swedish and deep tissue massages, reflexology,
+              and more. Eastern Spa has been providing relaxing comfort over 10
+              years. Our facility offers three single rooms and one family size
+              room, and multiple services, all day hours and more.
             </p>
           </div>
 
