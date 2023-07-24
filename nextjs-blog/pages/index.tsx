@@ -97,8 +97,12 @@ export default function Home() {
                 <h2 className="italic mb-1">Apps/Walk-ins Welcome!</h2>
                 <h2 className="italic">
                   <a href="tel:+16097703693">
-                    <i className="fas fa-phone"></i>&nbsp;
-                    <span className="text-yellow-100 underline">
+                    <i
+                      className="fas fa-phone fa-beat"
+                      style={{ animationDuration: "3s" }}
+                    ></i>
+                    &nbsp;&nbsp;&nbsp;
+                    <span className="text-yellow-100 underline inline-block animate-pulseZoom">
                       609.770.3693
                     </span>
                   </a>

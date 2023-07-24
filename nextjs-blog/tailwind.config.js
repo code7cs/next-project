@@ -9,6 +9,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        pulseZoom: "pulseZoom 3s infinite",
+      },
+      keyframes: {
+        pulseZoom: {
+          "0%, 100%": {
+            transform: "scale(1)",
+          },
+          "50%": {
+            transform: "scale(1.05)",
+          },
+        },
+      },
       colors: {
         darkgreen: "#366368",
         green: "#8caa8f",
