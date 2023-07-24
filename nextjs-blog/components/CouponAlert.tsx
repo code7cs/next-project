@@ -1,6 +1,6 @@
 const CouponAlert = ({}) => {
   return (
-    <div className="alert shadow-lg flex justify-center items-center fixed rounded-none text-darkgreen z-10">
+    <div className="alert shadow-lg flex justify-center items-center fixed rounded-none text-darkgreen z-10 !bg-[#F2F2F2]">
       <i
         className="fa-solid fa-gift fa-flip"
         style={{ animationDuration: "4s" }}
