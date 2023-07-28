@@ -16,7 +16,7 @@ const ContactUsForm = () => {
     setShowToast(true);
     setTimeout(() => {
       setShowToast(false);
-    }, 3000);
+    }, 5000);
   };
 
   const handleFormChange = (e) => {

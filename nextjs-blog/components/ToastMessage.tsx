@@ -1,4 +1,4 @@
-const ToastMessage = ({showToast }) => {
+const ToastMessage = ({ showToast }) => {
   return (
     <div>
       {showToast && (
@@ -7,7 +7,8 @@ const ToastMessage = ({showToast }) => {
             <span>Oops! You missed some required fields.</span>
           </div> */}
           <div className="alert alert-success">
-            <span>Thanks for your message!</span>
+            <i className="text-xl fa-regular fa-circle-check"></i>
+            <span className="text-xl">Thanks for your message!</span>
           </div>
         </div>
       )}
