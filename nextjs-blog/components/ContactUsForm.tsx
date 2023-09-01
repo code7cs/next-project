@@ -28,7 +28,7 @@ const ContactUsForm = () => {
     setShowToast(true);
     setTimeout(() => {
       setShowToast(false);
-    }, 5000);
+    }, 7000);
   };
 
   const handleFormChange = (e) => {
@@ -102,6 +102,8 @@ const ContactUsForm = () => {
   return (
     <>
       <h1 className="text-xl uppercase mb-4">Contact Us</h1>
+      <p className="text-sm">*For reservation and pricing,</p>
+      <p className="text-sm mb-2">kindly call us directly.</p>
       {/* <a
         href="mailto:eastern.spa.rio.grande@gmail.com"
         target="_blank"
