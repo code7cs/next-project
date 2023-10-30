@@ -26,7 +26,7 @@ const handleMarkerLoad = (marker) => {
       <div>
        <h3 style="color: black;">💆‍♀️ Eastern Spa LLC</h3>
        <p style="color: black;">1304 NJ-47 unit w, Rio Grande, NJ 08242</p>
-       <a style="color: blue" href="https://www.google.com/maps?q=${encodeURIComponent(
+       <a style="color: blue" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
          "Eastern Spa Rio Grande"
        )}" target="_blank">Open in Google Maps</a>
       </div>`;
