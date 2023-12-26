@@ -21,7 +21,7 @@ const handleMarkerLoad = (marker) => {
   const infoWindow = new google.maps.InfoWindow();
   const geocoder = new google.maps.Geocoder();
   geocoder.geocode({ location: marker.position }, (results, status) => {
-    if (status === google.maps.GeocoderStatus.OK && results.length > 0) {
+    if (status === google.maps.GeocoderStatus.OK && results && results.length > 0) {
       const content = `
       <div>
        <h3 style="color: black;">💆‍♀️ Eastern Spa LLC</h3>
@@ -44,7 +44,7 @@ const handleMarkerLoad = (marker) => {
 function Map2() {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '',
   });
 
   const [map, setMap] = React.useState(null);

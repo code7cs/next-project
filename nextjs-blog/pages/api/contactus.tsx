@@ -1,3 +1,5 @@
+// TODO: use Route Handlers - https://nextjs.org/docs/app/building-your-application/routing/route-handlers
+
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
