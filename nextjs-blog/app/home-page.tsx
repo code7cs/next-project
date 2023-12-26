@@ -2,7 +2,7 @@
 
 import { Analytics } from "@vercel/analytics/react";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/home-page.module.css";
 
 import ContactUsForm from "./_components/ContactUsForm";
 import CouponAlert from "./_components/CouponAlert";
