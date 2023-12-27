@@ -17,12 +17,20 @@ export default async function handler(req, res) {
     });
 
     try {
-      // Send the email
+      // Send the email to myself
       await transporter.sendMail({
         from: "eastern.spa.rio.grande@gmail.com",
         to: "eastern.spa.rio.grande@gmail.com",
-        subject: "Customer Message Received",
-        html: req.body
+        subject: `Customer Message Received - ${req.body.customerName}`,
+        html: req.body.emailToMyself
+      });
+
+      // Send the auto-reply email to customer
+      await transporter.sendMail({
+        from: "eastern.spa.rio.grande@gmail.com",
+        to: req.body.customerEmail,
+        subject: "Thank you for Contacting Eastern Spa!",
+        html: req.body.emailToCusotmer
       });
 
       // Respond with success message
