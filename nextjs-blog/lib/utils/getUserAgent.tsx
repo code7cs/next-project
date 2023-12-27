@@ -1,5 +1,5 @@
 // Helper function to get device information
-export function getDevice(userAgent) {
+export function getDevice(userAgent: string) {
   if (userAgent.match(/iPhone/i)) {
     return "iPhone";
   } else if (userAgent.match(/Android/i)) {
@@ -20,7 +20,7 @@ export function getDevice(userAgent) {
 }
 
 // Helper function to get browser information
-export function getBrowser(userAgent) {
+export function getBrowser(userAgent: string) {
   if (userAgent.match(/Edge/i)) {
     return "Microsoft Edge";
   } else if (userAgent.match(/Chrome/i)) {
