@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Image from "next/image";
 import styles from "../styles/home-page.module.css";
 
-import ContactUsForm from "../components/ContactUsForm";
+import ContactUsSection from "../components/ContactUsSection";
 import CouponAlert from "../components/CouponAlert";
 import Map2 from "../components/Map2";
 
@@ -176,7 +176,7 @@ export default function HomePage() {
             {/* Contact Us Form Section */}
             <div className="bg-white-marble w-full px-10 py-12">
               <div className="bg-darkgreen w-full p-6 flex flex-col justify-center items-center">
-                <ContactUsForm />
+                <ContactUsSection />
               </div>
             </div>
           </main>

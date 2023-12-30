@@ -1,7 +1,11 @@
+"use client";
+
 import { useEffect, useState } from "react";
+import SubmitButton from "./SubmitButton";
 import ToastMessage from "./ToastMessage";
 import { ContactUsFormData } from "../lib/types/definitions";
 import { getBrowser, getDevice } from "../lib/utils/getUserAgent";
+import { sendEmail } from "../server-actions/contactUs/actions";
 
 const initialFormData: ContactUsFormData = {
   name: "",
@@ -10,10 +14,9 @@ const initialFormData: ContactUsFormData = {
   message: "",
 };
 
-const ContactUsForm = () => {
-  const [formData, setFormData] = useState(initialFormData);
+const ContactUsSection = () => {
+  const [contactUsForm, setContactUsForm] = useState(initialFormData);
   const [showToast, setShowToast] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const [userAgent, setUserAgent] = useState("");
 
   useEffect(() => {
@@ -34,45 +37,19 @@ const ContactUsForm = () => {
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
+    setContactUsForm((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    setIsLoading(true);
-
-    const { name, email, subject, message } = formData;
-
-    if (!name || !email || !subject || !message) {
-      return;
+  const handleSubmit = async (formData: FormData) => {
+    // use server-actions
+    const { message } = await sendEmail(formData, userAgent);
+    if (message === "OK") {
+      setContactUsForm(initialFormData);
+      handleShowToast();
     }
-
-    try {
-      const response = await fetch("/api/contactus", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ ...formData, userAgent }),
-      });
-
-      if (response.ok) {
-        console.log("Message sent successfully");
-        handleShowToast();
-      } else {
-        console.error("Failed to send message");
-      }
-
-      // Clear form fields
-      setFormData(initialFormData);
-    } catch (error) {
-      console.error("Failed to send message:", error);
-    }
-    setIsLoading(false);
   };
 
   return (
@@ -80,14 +57,8 @@ const ContactUsForm = () => {
       <h1 className="text-xl uppercase mb-4">Contact Us</h1>
       <p className="text-sm">*For reservation and pricing,</p>
       <p className="text-sm mb-2">kindly call us directly.</p>
-      {/* <a
-        href="mailto:eastern.spa.rio.grande@gmail.com"
-        target="_blank"
-        className="mb-4"
-      >
-        <span className="italic text-sm">eastern.spa.rio.grande@gmail.com</span>
-      </a> */}
-      <form onSubmit={handleSubmit}>
+
+      <form action={handleSubmit}>
         <label className="label">
           <span className="label-text text-white">Name *</span>
         </label>
@@ -98,7 +69,7 @@ const ContactUsForm = () => {
           placeholder="Type your name here"
           required
           type="text"
-          value={formData.name}
+          value={contactUsForm.name}
         />
 
         <label className="label">
@@ -111,7 +82,7 @@ const ContactUsForm = () => {
           placeholder="Type your email here"
           required
           type="email"
-          value={formData.email}
+          value={contactUsForm.email}
         />
 
         <label className="label">
@@ -124,7 +95,7 @@ const ContactUsForm = () => {
           placeholder="Type subject here"
           required
           type="text"
-          value={formData.subject}
+          value={contactUsForm.subject}
         />
 
         <label className="label">
@@ -135,21 +106,10 @@ const ContactUsForm = () => {
           name="message"
           onChange={handleFormChange}
           required
-          value={formData.message}
+          value={contactUsForm.message}
         ></textarea>
 
-        <button
-          className="btn btn-outline w-full max-w-3xl mt-8 mb-4 text-white"
-          type="submit"
-          disabled={isLoading}
-        >
-          <span className="!text-white">Submit&nbsp;</span>
-          {isLoading ? (
-            <i className="fa-solid fa-spinner fa-spin text-white text-xl"></i>
-          ) : (
-            <i className="fa-regular fa-paper-plane"></i>
-          )}
-        </button>
+        <SubmitButton />
       </form>
 
       <ToastMessage showToast={showToast} />
@@ -157,4 +117,4 @@ const ContactUsForm = () => {
   );
 };
 
-export default ContactUsForm;
+export default ContactUsSection;
