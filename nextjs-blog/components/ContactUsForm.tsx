@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ToastMessage from "./ToastMessage";
-import { ContactUsFormData } from "../../lib/types/definitions";
-import { getBrowser, getDevice } from "../../lib/utils/getUserAgent";
+import { ContactUsFormData } from "../lib/types/definitions";
+import { getBrowser, getDevice } from "../lib/utils/getUserAgent";
 
 const initialFormData: ContactUsFormData = {
   name: "",

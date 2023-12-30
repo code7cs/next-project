@@ -4,9 +4,9 @@ import { Analytics } from "@vercel/analytics/react";
 import Image from "next/image";
 import styles from "../styles/home-page.module.css";
 
-import ContactUsForm from "./_components/ContactUsForm";
-import CouponAlert from "./_components/CouponAlert";
-import Map2 from "./_components/Map2";
+import ContactUsForm from "../components/ContactUsForm";
+import CouponAlert from "../components/CouponAlert";
+import Map2 from "../components/Map2";
 
 import easternSpaJpg from "../public/assets/img/eastern-spa.jpg";
 import header__logoText from "../public/assets/img/spa-logo-text-only.png";
