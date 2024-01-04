@@ -24,7 +24,7 @@ const ContactUsSection = () => {
     const device = getDevice(userAgent);
     const browser = getBrowser(userAgent);
     setUserAgent(
-      userAgent + ". Device is: " + device + ". Browser is: " + browser
+      userAgent + ". Device is: " + device + ". Browser is: " + browser,
     );
   }, []);
 
