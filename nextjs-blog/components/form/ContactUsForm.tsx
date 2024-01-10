@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import SubmitButton from "./SubmitButton";
-import ToastMessage from "./ToastMessage";
-import { ContactUsFormData } from "../lib/types/definitions";
-import { getBrowser, getDevice } from "../lib/utils/getUserAgent";
-import { sendEmail } from "../server-actions/contactUs/actions";
+import ToastMessage from "../ToastMessage";
+import { ContactUsFormData } from "../../lib/types/definitions";
+import { getBrowser, getDevice } from "../../lib/utils/getUserAgent";
+import { sendEmail } from "../../server-actions/contactUs/actions";
 
 const initialFormData: ContactUsFormData = {
   name: "",
@@ -14,8 +14,8 @@ const initialFormData: ContactUsFormData = {
   message: "",
 };
 
-const ContactUsSection = () => {
-  const [contactUsForm, setContactUsForm] = useState(initialFormData);
+const ContactUsForm = () => {
+  const [formData, setFormData] = useState(initialFormData);
   const [showToast, setShowToast] = useState(false);
   const [userAgent, setUserAgent] = useState("");
 
@@ -35,9 +35,11 @@ const ContactUsSection = () => {
     }, 7000);
   };
 
-  const handleFormChange = (e) => {
+  const handleFormChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
-    setContactUsForm((prevData) => ({
+    setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
@@ -47,7 +49,7 @@ const ContactUsSection = () => {
     // use server-actions
     const { message } = await sendEmail(formData, userAgent);
     if (message === "OK") {
-      setContactUsForm(initialFormData);
+      setFormData(initialFormData);
       handleShowToast();
     }
   };
@@ -69,7 +71,7 @@ const ContactUsSection = () => {
           placeholder="Type your name here"
           required
           type="text"
-          value={contactUsForm.name}
+          value={formData.name}
         />
 
         <label className="label">
@@ -82,7 +84,7 @@ const ContactUsSection = () => {
           placeholder="Type your email here"
           required
           type="email"
-          value={contactUsForm.email}
+          value={formData.email}
         />
 
         <label className="label">
@@ -95,7 +97,7 @@ const ContactUsSection = () => {
           placeholder="Type subject here"
           required
           type="text"
-          value={contactUsForm.subject}
+          value={formData.subject}
         />
 
         <label className="label">
@@ -106,10 +108,10 @@ const ContactUsSection = () => {
           name="message"
           onChange={handleFormChange}
           required
-          value={contactUsForm.message}
+          value={formData.message}
         ></textarea>
 
-        <SubmitButton />
+        <SubmitButton text="submit" />
       </form>
 
       <ToastMessage showToast={showToast} />
@@ -117,4 +119,4 @@ const ContactUsSection = () => {
   );
 };
 
-export default ContactUsSection;
+export default ContactUsForm;

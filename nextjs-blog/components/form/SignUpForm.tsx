@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { addUserToDatabase } from "../../server-actions/signUp/actions";
+import SubmitButton from "./SubmitButton";
 
 const SignUpForm = () => {
   const router = useRouter();
@@ -24,9 +25,10 @@ const SignUpForm = () => {
       </label>
       <input
         className="input input-bordered w-full max-w-3xl text-darkgreen bg-white"
-        placeholder="Enter your email"
-        type="email"
         name="email"
+        placeholder="Enter your email"
+        required
+        type="email"
       />
 
       <label className="label">
@@ -34,17 +36,13 @@ const SignUpForm = () => {
       </label>
       <input
         className="input input-bordered w-full max-w-3xl text-darkgreen bg-white"
-        placeholder="Enter your password"
-        type="password"
         name="password"
+        placeholder="Enter your password"
+        required
+        type="password"
       />
 
-      <button
-        className="btn btn-outline w-full max-w-3xl mt-8 mb-4 text-white"
-        type="submit"
-      >
-        Sign Up
-      </button>
+      <SubmitButton text="Sign Up" />
     </form>
   );
 };

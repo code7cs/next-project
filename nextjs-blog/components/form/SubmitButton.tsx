@@ -3,7 +3,7 @@
 import React from "react";
 import { useFormStatus } from "react-dom";
 
-function SubmitButton() {
+const SubmitButton = ({ text }) => {
   const { pending } = useFormStatus();
 
   return (
@@ -12,7 +12,7 @@ function SubmitButton() {
       type="submit"
       disabled={pending}
     >
-      <span className="!text-white">Submit&nbsp;</span>
+      <span className="!text-white">{text}&nbsp;</span>
       {pending ? (
         <i className="fa-solid fa-spinner fa-spin text-white text-xl"></i>
       ) : (
@@ -20,6 +20,6 @@ function SubmitButton() {
       )}
     </button>
   );
-}
+};
 
 export default SubmitButton;
