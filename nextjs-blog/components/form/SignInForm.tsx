@@ -20,6 +20,7 @@ const SignInForm = () => {
       console.error(signInData.error);
     } else {
       router.push("/about");
+      router.refresh();
     }
   };
 
