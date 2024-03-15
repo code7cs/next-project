@@ -3,11 +3,17 @@ import { authOptions } from "../../../lib/auth";
 
 const About = async () => {
   const session = await getServerSession(authOptions);
-  console.log("session is: ", session);
+
+  let content = <h1>Please first login to see this page.</h1>;
+
+  if (session?.user) {
+    content = <h1>Hello {session.user.userName}, welcome to about page!</h1>;
+  }
+
   return (
     <>
       <div className="min-h-screen flex flex-col justify-center items-center py-0 px-2 bg-darkgreen text-white">
-        <h1>Hello {session?.user?.name}, welcome to about page!</h1>
+        {content}
       </div>
     </>
   );
