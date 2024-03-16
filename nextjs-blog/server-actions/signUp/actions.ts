@@ -9,7 +9,7 @@ export const addUserToDatabase = async (formData: FormData) => {
     const password = formData.get("password")?.toString();
 
     if (!email || !password) {
-      return { error: "Email and password are required", status: 400 };
+      return { error: "Email and password are required.", status: 400 };
     }
 
     // check if email already exists
@@ -19,7 +19,7 @@ export const addUserToDatabase = async (formData: FormData) => {
       },
     });
     if (existingUserByEmail) {
-      return { error: "Email already exists", status: 409 };
+      return { error: "Email already exists.", status: 409 };
     }
 
     const hashedPassword = await hash(password, 10);
@@ -33,10 +33,10 @@ export const addUserToDatabase = async (formData: FormData) => {
 
     return {
       user: newUser,
-      message: "User created successfully",
+      message: "User created successfully.",
       status: 201,
     };
   } catch (error) {
-    return { error: "Something went wrong", status: 500 };
+    return { error: "Something went wrong.", status: 500 };
   }
 };

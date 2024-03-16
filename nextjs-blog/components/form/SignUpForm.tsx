@@ -3,18 +3,28 @@
 import { useRouter } from "next/navigation";
 import { addUserToDatabase } from "../../server-actions/signUp/actions";
 import SubmitButton from "./SubmitButton";
+import { useState } from "react";
+import ToastMessage from "../ToastMessage";
 
 const SignUpForm = () => {
   const router = useRouter();
+  const [showToast, setShowToast] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleSignUp = async (formData: FormData) => {
     // use server-actions
     const { status, message, error } = await addUserToDatabase(formData);
     if (status === 201) {
       console.log(message);
-      // redirect to sign-in page
       router.push("/sign-in");
     } else {
       console.error(error);
+      setErrorMessage(error ?? "Sign up failed.");
+      setShowToast(true);
+      const timer = setTimeout(() => {
+        setShowToast(false);
+        clearTimeout(timer);
+      }, 3000);
     }
   };
 
@@ -43,6 +53,8 @@ const SignUpForm = () => {
       />
 
       <SubmitButton text="Sign Up" />
+
+      {showToast && <ToastMessage isSuccess={false} message={errorMessage} />}
     </form>
   );
 };

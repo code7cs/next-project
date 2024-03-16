@@ -3,9 +3,13 @@
 import { useRouter } from "next/navigation";
 import SubmitButton from "./SubmitButton";
 import { signIn } from "next-auth/react";
+import ToastMessage from "../ToastMessage";
+import { useState } from "react";
 
 const SignInForm = () => {
   const router = useRouter();
+  const [showToast, setShowToast] = useState(false);
+
   const handleSignIn = async (e: any) => {
     e.preventDefault();
     const signInData = await signIn("credentials", {
@@ -16,8 +20,12 @@ const SignInForm = () => {
     console.log("signInData is: ", signInData);
 
     if (signInData?.error) {
-      // TODO: add some UI to show error message
       console.error(signInData.error);
+      setShowToast(true);
+      const timer = setTimeout(() => {
+        setShowToast(false);
+        clearTimeout(timer);
+      }, 3000);
     } else {
       router.push("/about");
       router.refresh();
@@ -49,6 +57,13 @@ const SignInForm = () => {
       />
 
       <SubmitButton text="Sign In" />
+
+      {showToast && (
+        <ToastMessage
+          isSuccess={false}
+          message="Invalid credentials. Please try again."
+        />
+      )}
     </form>
   );
 };
