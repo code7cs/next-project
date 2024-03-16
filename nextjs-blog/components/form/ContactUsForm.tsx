@@ -114,7 +114,7 @@ const ContactUsForm = () => {
         <SubmitButton text="submit" />
       </form>
 
-      <ToastMessage showToast={showToast} />
+      {showToast && <ToastMessage isSuccess={true} />}
     </>
   );
 };
