@@ -1,4 +1,4 @@
-const CouponAlert = ({}) => {
+const CouponAlert = () => {
   return (
     <div className="alert shadow-lg flex justify-center items-center fixed rounded-none text-darkgreen z-10 !bg-[#F2F2F2] !border-none">
       <i

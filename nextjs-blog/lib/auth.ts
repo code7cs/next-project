@@ -1,8 +1,8 @@
-import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { NextAuthOptions } from "next-auth";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import prisma from "../db/prisma";
 import { compare } from "bcrypt";
+import prisma from "../db/prisma";
 
 /**
  * Tutorial: https://www.youtube.com/watch?v=bicCg4GxOP8&list=LL&index=5&t=1003s

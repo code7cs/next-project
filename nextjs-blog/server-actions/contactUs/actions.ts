@@ -1,10 +1,10 @@
 "use server";
 
-import nodemailer from "nodemailer";
 import {
   generateEmailBodyToCustomer,
   generateEmailBodyToMyself,
 } from "../../lib/utils/emailTemplate";
+import nodemailer from "nodemailer";
 
 export const sendEmail = async (formData: FormData, userAgent: string) => {
   const transporter = nodemailer.createTransport({
