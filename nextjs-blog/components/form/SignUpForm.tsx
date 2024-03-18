@@ -1,10 +1,10 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { addUserToDatabase } from "../../server-actions/signUp/actions";
 import SubmitButton from "./SubmitButton";
-import { useState } from "react";
 import ToastMessage from "../ToastMessage";
+import { addUserToDatabase } from "../../server-actions/signUp/actions";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const SignUpForm = () => {
   const router = useRouter();

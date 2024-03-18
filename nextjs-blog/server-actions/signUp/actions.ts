@@ -1,7 +1,7 @@
 "use server";
 
-import prisma from "../../db/prisma";
 import { hash } from "bcrypt";
+import prisma from "../../db/prisma";
 
 export const addUserToDatabase = async (formData: FormData) => {
   try {

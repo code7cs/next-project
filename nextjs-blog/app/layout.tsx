@@ -1,6 +1,7 @@
-import { Metadata } from "next";
 import "../styles/globals.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Metadata } from "next";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Eastern Spa Rio Grand",

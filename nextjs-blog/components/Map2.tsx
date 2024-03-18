@@ -53,6 +53,7 @@ function Map2() {
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? "",
   });
 
+  // eslint-disable-next-line no-unused-vars
   const [map, setMap] = React.useState(null);
 
   const onLoad = React.useCallback(function callback(map) {
@@ -63,6 +64,7 @@ function Map2() {
     setMap(map);
   }, []);
 
+  // eslint-disable-next-line no-unused-vars
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null);
   }, []);
