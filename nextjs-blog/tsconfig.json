@@ -2,6 +2,15 @@
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/db/*": ["db/*"],
+      "@/lib/*": ["lib/*"],
+      "@/public/*": ["public/*"],
+      "@/server-actions/*": ["server-actions/*"],
+      "@/styles/*": ["styles/*"]
+    },
     "skipLibCheck": true,
     "strict": false,
     "forceConsistentCasingInFileNames": true,

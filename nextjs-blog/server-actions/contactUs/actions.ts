@@ -3,7 +3,7 @@
 import {
   generateEmailBodyToCustomer,
   generateEmailBodyToMyself,
-} from "../../lib/utils/emailTemplate";
+} from "@/lib/utils/emailTemplate";
 import nodemailer from "nodemailer";
 
 export const sendEmail = async (formData: FormData, userAgent: string) => {

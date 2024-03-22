@@ -1,16 +1,16 @@
 import { Analytics } from "@vercel/analytics/react";
-import ContactUsForm from "../components/form/ContactUsForm";
-import CouponAlert from "../components/CouponAlert";
+import ContactUsForm from "@/components/form/ContactUsForm";
+import CouponAlert from "@/components/CouponAlert";
 import Image from "next/image";
-import Map2 from "../components/Map2";
-import card1 from "../public/assets/img/swedish-16-9.jpg";
-import card2 from "../public/assets/img/deep-16-9.jpg";
-import card3 from "../public/assets/img/foot-16-9.jpg";
-import card4 from "../public/assets/img/hot-16-9.jpg";
-import easternSpaJpg from "../public/assets/img/eastern-spa.jpg";
-import header__logoIcon from "../public/assets/img/logo-small.jpg";
-import header__logoText from "../public/assets/img/spa-logo-text-only.png";
-import styles from "../styles/home-page.module.css";
+import Map2 from "@/components/Map2";
+import card1 from "@/public/assets/img/swedish-16-9.jpg";
+import card2 from "@/public/assets/img/deep-16-9.jpg";
+import card3 from "@/public/assets/img/foot-16-9.jpg";
+import card4 from "@/public/assets/img/hot-16-9.jpg";
+import easternSpaJpg from "@/public/assets/img/eastern-spa.jpg";
+import header__logoIcon from "@/public/assets/img/logo-small.jpg";
+import header__logoText from "@/public/assets/img/spa-logo-text-only.png";
+import styles from "@/styles/home-page.module.css";
 
 export default function HomePage() {
   return (
@@ -137,8 +137,8 @@ export default function HomePage() {
               <span>Deep Tissue</span>
               <p className={styles.grid__card_paragraph}>
                 Deep tissue massage targets chronic tension in muscles that lie
-                far below the body&apos;s surface. Slow strokes or friction movements
-                that go across the muscle grain.
+                far below the body&apos;s surface. Slow strokes or friction
+                movements that go across the muscle grain.
               </p>
             </div>
 

@@ -2,7 +2,7 @@
 
 import SubmitButton from "./SubmitButton";
 import ToastMessage from "../ToastMessage";
-import { addUserToDatabase } from "../../server-actions/signUp/actions";
+import { addUserToDatabase } from "@/server-actions/signUp/actions";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
