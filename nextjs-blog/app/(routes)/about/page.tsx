@@ -1,5 +1,5 @@
-import Navbar from "../../../components/Navbar";
-import { authOptions } from "../../../lib/auth";
+import Navbar from "@/components/Navbar";
+import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
 
 const About = async () => {

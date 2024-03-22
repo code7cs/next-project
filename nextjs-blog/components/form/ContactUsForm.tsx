@@ -1,12 +1,12 @@
 "use client";
 
-import { getBrowser, getDevice } from "../../lib/utils/getUserAgent";
+import { getBrowser, getDevice } from "@/lib/utils/getUserAgent";
 import { useEffect, useState } from "react";
-import { ContactUsFormData } from "../../lib/types/definitions";
+import { ContactUsFormData } from "@/lib/types/definitions";
 import React from "react";
 import SubmitButton from "./SubmitButton";
 import ToastMessage from "../ToastMessage";
-import { sendEmail } from "../../server-actions/contactUs/actions";
+import { sendEmail } from "@/server-actions/contactUs/actions";
 
 const initialFormData: ContactUsFormData = {
   name: "",
