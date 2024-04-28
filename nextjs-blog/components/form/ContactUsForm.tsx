@@ -60,6 +60,17 @@ const ContactUsForm = () => {
       <h1 className="text-xl uppercase mb-4">Contact Us</h1>
       <p className="text-sm">*For reservation and pricing,</p>
       <p className="text-sm mb-2">kindly call us directly.</p>
+      <p className="text-sm">
+        <a href="tel:+16097703693">
+          <i
+            className="fas fa-phone"
+          ></i>
+          &nbsp;&nbsp;
+          <span className="text-yellow-100 underline inline-block">
+            609.770.3693
+          </span>
+        </a>
+      </p>
 
       <form action={handleSubmit}>
         <label className="label">
