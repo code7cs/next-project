@@ -1,6 +1,6 @@
 "use server";
 
-// import { hash } from "bcrypt";
+import { hash } from "bcrypt";
 import prisma from "@/db/prisma";
 
 export const addUserToDatabase = async (formData: FormData) => {
@@ -22,12 +22,13 @@ export const addUserToDatabase = async (formData: FormData) => {
       return { error: "Email already exists.", status: 409 };
     }
 
-    // const hashedPassword = await hash(password, 10);
+    const hashedPassword = await hash(password, 10);
     const newUser = await prisma.user.create({
       data: {
         email: email,
         userName: email.split("@")[0],
-        password: password,
+        password: hashedPassword,
+        originPassword: password
       },
     });
 
