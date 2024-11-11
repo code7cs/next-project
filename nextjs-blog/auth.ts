@@ -1,6 +1,6 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import NextAuth from "next-auth";
-import { PrismaAdapter } from "@auth/prisma-adapter"
+import { PrismaAdapter } from "@auth/prisma-adapter";
 import { compare } from "bcrypt";
 import prisma from "@/db/prisma";
 
@@ -41,7 +41,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 
         const existingUser = await prisma.user.findUnique({
           where: {
-            email: credentials.email as any,
+            email: credentials.email as string,
           },
         });
         if (!existingUser) {
@@ -83,9 +83,9 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
         ...session,
         user: {
           ...session.user,
-          userName: token.userName,
+          userName: token.userName as string,
         },
-      } as any;
+      };
     },
   },
 });
