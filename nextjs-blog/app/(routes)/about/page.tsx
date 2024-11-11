@@ -1,9 +1,8 @@
 import Navbar from "@/components/Navbar";
-import { authOptions } from "@/lib/auth";
-import { getServerSession } from "next-auth";
+import { auth } from "@/auth";
 
 const About = async () => {
-  const session = await getServerSession(authOptions);
+  const session = await auth();
 
   let content = <h1>Please first login to see this page.</h1>;
 

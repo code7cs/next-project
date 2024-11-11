@@ -1,13 +1,14 @@
 import CredentialsProvider from "next-auth/providers/credentials";
-import { NextAuthOptions } from "next-auth";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import NextAuth from "next-auth";
+import { PrismaAdapter } from "@auth/prisma-adapter"
 import { compare } from "bcrypt";
 import prisma from "@/db/prisma";
 
 /**
  * Tutorial: https://www.youtube.com/watch?v=bicCg4GxOP8&list=LL&index=5&t=1003s
  */
-export const authOptions: NextAuthOptions = {
+
+export const { auth, handlers, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
   secret: process.env.NEXTAUTH_SECRET,
   session: {
@@ -87,4 +88,4 @@ export const authOptions: NextAuthOptions = {
       };
     },
   },
-};
+});
