@@ -41,7 +41,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 
         const existingUser = await prisma.user.findUnique({
           where: {
-            email: credentials.email,
+            email: credentials.email as any,
           },
         });
         if (!existingUser) {
@@ -85,7 +85,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
           ...session.user,
           userName: token.userName,
         },
-      };
+      } as any;
     },
   },
 });
