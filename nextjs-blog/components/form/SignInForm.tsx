@@ -2,7 +2,7 @@
 
 import SubmitButton from "./SubmitButton";
 import ToastMessage from "../ToastMessage";
-import { signIn } from "next-auth/react";
+import { signInByCredentials } from "@/server-actions/signIn/actions";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -10,14 +10,9 @@ const SignInForm = () => {
   const router = useRouter();
   const [showToast, setShowToast] = useState(false);
 
-  const handleSignIn = async (e: any) => {
-    e.preventDefault();
-    const signInData = await signIn("credentials", {
-      email: e.target.elements.email.value,
-      password: e.target.elements.password.value,
-      redirect: false,
-    });
-    console.log("signInData is: ", signInData);
+  const handleSignIn = async (formData: FormData) => {
+    // use server-actions
+    const signInData = await signInByCredentials(formData);
 
     if (signInData?.error) {
       console.error(signInData.error);
@@ -33,7 +28,7 @@ const SignInForm = () => {
   };
 
   return (
-    <form onSubmit={handleSignIn}>
+    <form action={handleSignIn}>
       <label className="label">
         <span className="label-text text-white">Email *</span>
       </label>
