@@ -188,7 +188,7 @@ export default function HomePage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Copyright © 2024 Eastern Spa LLC. All rights reserved.
+            Copyright © 2025 Eastern Spa LLC. All rights reserved.
           </a>
         </footer>
       </div>
