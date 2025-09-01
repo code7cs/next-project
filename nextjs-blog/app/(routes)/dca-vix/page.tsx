@@ -1,7 +1,6 @@
-
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, {  useEffect, useRef, useState } from "react";
 import styles from "./dca-vix.module.css";
 
 const defaultEtfPrices = {
@@ -13,7 +12,6 @@ const defaultEtfPrices = {
   JNJ: 162.8,
   BIL: 91.25,
 };
-
 
 type InputsState = {
   totalBudget: string;
@@ -70,10 +68,9 @@ function getMarketStatus(dropPercentage: number) {
 
 export default function DcaVixPage() {
   const [inputs, setInputs] = useState<InputsState>(defaultInputs);
-  const [etfPrices, setEtfPrices] = useState(defaultEtfPrices);
+  const [etfPrices] = useState(defaultEtfPrices);
   const [results, setResults] = useState<any>(null);
   const [records, setRecords] = useState<any[]>([]);
-  const [showResults, setShowResults] = useState(true);
   const [ignoreNegativeFG, setIgnoreNegativeFG] = useState(true); // 是否忽略负数减码
   const recordTableRef = useRef<HTMLTableSectionElement>(null);
 
@@ -95,7 +92,7 @@ export default function DcaVixPage() {
 // 输入区块组件（移到组件外部，防止每次渲染都重建导致 input blur）
 type DcaVixInputsProps = {
   inputs: InputsState;
-  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleInputChange: React.ChangeEventHandler<HTMLInputElement>;
   ignoreNegativeFG: boolean;
 };
 
@@ -217,7 +214,6 @@ function DcaVixInputs({ inputs, handleInputChange, ignoreNegativeFG }: DcaVixInp
       qqqRatio: toNum(inputs.qqqRatio),
       defensiveRatio: toNum(inputs.defensiveRatio),
     });
-    setShowResults(true);
   }
 
   function handleAddToRecord() {
