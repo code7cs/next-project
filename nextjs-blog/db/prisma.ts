@@ -1,11 +1,21 @@
 /* eslint-disable no-unused-vars */
+import { Pool } from "pg";
 import { PrismaClient } from "@prisma/client";
+import { PrismaPg } from "@prisma/adapter-pg";
 
 declare global {
   var prisma: PrismaClient | undefined;
 }
 
-const prisma = global.prisma || new PrismaClient();
+function createPrismaClient() {
+  const pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+  });
+  const adapter = new PrismaPg(pool);
+  return new PrismaClient({ adapter });
+}
+
+const prisma = global.prisma || createPrismaClient();
 
 if (process.env.NODE_ENV === "development") global.prisma = prisma;
 
