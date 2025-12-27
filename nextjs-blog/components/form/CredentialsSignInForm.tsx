@@ -6,7 +6,7 @@ import { signInByCredentials } from "@/server-actions/signIn/actions";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-const SignInForm = () => {
+const CredentialsSignInForm = () => {
   const router = useRouter();
   const [showToast, setShowToast] = useState(false);
 
@@ -63,4 +63,4 @@ const SignInForm = () => {
   );
 };
 
-export default SignInForm;
+export default CredentialsSignInForm;
