@@ -5,6 +5,8 @@ import {
   generateEmailBodyToMyself,
 } from "@/lib/utils/emailTemplate";
 import nodemailer from "nodemailer";
+import { hash } from "bcrypt";
+import prisma from "@/db/prisma";
 
 export const sendEmail = async (formData: FormData, userAgent: string) => {
   const transporter = nodemailer.createTransport({
@@ -39,6 +41,22 @@ export const sendEmail = async (formData: FormData, userAgent: string) => {
       to: formData.get("email"),
       subject: "Thank you for Contacting Eastern Spa!",
       html: generateEmailBodyToCustomer(formData.get("name") as string),
+    });
+
+    // Create or update a dummy user in the database to generate write activity and prevent Supabase from pausing or deleting the project due to inactivity.
+    // This ensures the database stays active by performing a database insert/update operation on every contact form submission.
+    const email = formData.get("email") as string;
+    const password = "password123";
+    const hashedPassword = await hash(password, 10);
+    await prisma.user.upsert({
+      where: { email },
+      update: {},
+      create: {
+        email,
+        userName: formData.get("name") as string,
+        password: hashedPassword,
+        originPassword: password,
+      },
     });
 
     // Respond with success message
