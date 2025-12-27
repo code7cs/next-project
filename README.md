@@ -3,16 +3,16 @@
 A modern, full-stack web application built with **Next.js 16**, **Prisma ORM**, and **Supabase PostgreSQL**, featuring user authentication, contact forms, and email notifications.
 
 ## 📋 Table of Contents
-- [Project Overview](#project-overview)
-- [Technology Stack](#technology-stack)
-- [Project Structure](#project-structure)
-- [Architecture & Data Flow](#architecture--data-flow)
-- [Key Features](#key-features)
-- [Database Schema](#database-schema)
-- [How It Works: Server Actions](#how-it-works-server-actions)
-- [Installation & Setup](#installation--setup)
-- [Environment Variables](#environment-variables)
-- [Running the Project](#running-the-project)
+- [Project Overview](#-project-overview)
+- [Technology Stack](#-technology-stack)
+- [Project Structure](#-project-structure)
+- [Architecture & Data Flow](#-architecture--data-flow)
+- [Key Features](#-key-features)
+- [Database Schema](#-database-schema)
+- [How It Works: Server Actions](#-how-it-works-server-actions)
+- [Installation & Setup](#-installation--setup)
+- [Environment Variables](#-environment-variables)
+- [Running the Project](#-running-the-project)
 
 ---
 
