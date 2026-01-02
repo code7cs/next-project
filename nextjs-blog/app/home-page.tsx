@@ -70,7 +70,7 @@ export default function HomePage() {
               We provide high quality Chinese massage therapy in Rio Grande,
               Cape May, NJ. Our expert therapists are trained in numerous
               therapies including Swedish and deep tissue massages, reflexology,
-              and more. Eastern Spa has been providing relaxing comfort over 10
+              and more. Eastern Spa has been providing relaxing comfort over 12
               years. Our facility offers three single rooms and one family size
               room, and multiple services, all day hours and more.
             </p>
